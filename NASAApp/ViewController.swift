@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let endpoint = MarsRoverEndpoint.imageSearchByRover(rover: .curiosity, camera: .all)
+        let request = endpoint.request
+        
+        print(request)
+        
     }
 
     override func didReceiveMemoryWarning() {

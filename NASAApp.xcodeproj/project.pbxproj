@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18010BBB1FE1481200DA8B20 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BBA1FE1481200DA8B20 /* Rover.swift */; };
+		18010BBD1FE148F400DA8B20 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BBC1FE148F400DA8B20 /* Camera.swift */; };
 		18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595881FE0196C00798AD6 /* AppDelegate.swift */; };
 		18F5958B1FE0196C00798AD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5958A1FE0196C00798AD6 /* ViewController.swift */; };
 		18F5958E1FE0196C00798AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F5958C1FE0196C00798AD6 /* Main.storyboard */; };
 		18F595901FE0196C00798AD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F5958F1FE0196C00798AD6 /* Assets.xcassets */; };
 		18F595931FE0196C00798AD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F595911FE0196C00798AD6 /* LaunchScreen.storyboard */; };
 		18F5959E1FE0196C00798AD6 /* NASAAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5959D1FE0196C00798AD6 /* NASAAppTests.swift */; };
+		18F595AA1FE01AF000798AD6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595A91FE01AF000798AD6 /* Endpoint.swift */; };
+		18F595AC1FE01B4F00798AD6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595AB1FE01B4F00798AD6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18010BBA1FE1481200DA8B20 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
+		18010BBC1FE148F400DA8B20 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		18F595851FE0196C00798AD6 /* NASAApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F595881FE0196C00798AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F5958A1FE0196C00798AD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +42,8 @@
 		18F595991FE0196C00798AD6 /* NASAAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F5959D1FE0196C00798AD6 /* NASAAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAppTests.swift; sourceTree = "<group>"; };
 		18F5959F1FE0196C00798AD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18F595A91FE01AF000798AD6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		18F595AB1FE01B4F00798AD6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18010BB91FE1472700DA8B20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18010BBA1FE1481200DA8B20 /* Rover.swift */,
+				18010BBC1FE148F400DA8B20 /* Camera.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		18F5957C1FE0196C00798AD6 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +94,8 @@
 		18F595871FE0196C00798AD6 /* NASAApp */ = {
 			isa = PBXGroup;
 			children = (
+				18010BB91FE1472700DA8B20 /* Model */,
+				18F595A81FE01AD800798AD6 /* Networking */,
 				18F595881FE0196C00798AD6 /* AppDelegate.swift */,
 				18F5958A1FE0196C00798AD6 /* ViewController.swift */,
 				18F5958C1FE0196C00798AD6 /* Main.storyboard */,
@@ -94,6 +113,15 @@
 				18F5959F1FE0196C00798AD6 /* Info.plist */,
 			);
 			path = NASAAppTests;
+			sourceTree = "<group>";
+		};
+		18F595A81FE01AD800798AD6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				18F595A91FE01AF000798AD6 /* Endpoint.swift */,
+				18F595AB1FE01B4F00798AD6 /* Constants.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18010BBD1FE148F400DA8B20 /* Camera.swift in Sources */,
+				18010BBB1FE1481200DA8B20 /* Rover.swift in Sources */,
 				18F5958B1FE0196C00798AD6 /* ViewController.swift in Sources */,
+				18F595AA1FE01AF000798AD6 /* Endpoint.swift in Sources */,
 				18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */,
+				18F595AC1FE01B4F00798AD6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
