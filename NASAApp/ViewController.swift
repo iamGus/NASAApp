@@ -42,17 +42,14 @@ class ViewController: UIViewController {
     func seeResults() {
         for rover in rovers {
             print("Name: \(rover.name)")
+            print("Id: \(rover.id)")
             print("Cameras: \(rover.cameras.count)")
             print("-------------")
         }
         
-        for rover in rovers {
-            for camera in rover.cameras {
-                
-            }
-        }
+        cameras = RoverCamera.addCamerasAndRemoveDups(rovers: rovers)
         
-        print(cameras.count)
+        print(cameras.description)
         
     }
 
