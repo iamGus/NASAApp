@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		18010BBB1FE1481200DA8B20 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BBA1FE1481200DA8B20 /* Rover.swift */; };
-		18010BBD1FE148F400DA8B20 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BBC1FE148F400DA8B20 /* Camera.swift */; };
+		18010BBD1FE148F400DA8B20 /* RoverCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BBC1FE148F400DA8B20 /* RoverCamera.swift */; };
+		18010BBF1FE14E4600DA8B20 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BBE1FE14E4600DA8B20 /* APIClient.swift */; };
+		18010BC11FE1500D00DA8B20 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC01FE1500D00DA8B20 /* Result.swift */; };
+		18010BC31FE150D000DA8B20 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC21FE150D000DA8B20 /* JSONDecodable.swift */; };
+		18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC41FE1611900DA8B20 /* NasaClient.swift */; };
+		18EAF7D01FE293C100B1691B /* APIClient2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAF7CF1FE293C100B1691B /* APIClient2.swift */; };
 		18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595881FE0196C00798AD6 /* AppDelegate.swift */; };
 		18F5958B1FE0196C00798AD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5958A1FE0196C00798AD6 /* ViewController.swift */; };
 		18F5958E1FE0196C00798AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F5958C1FE0196C00798AD6 /* Main.storyboard */; };
@@ -31,7 +36,12 @@
 
 /* Begin PBXFileReference section */
 		18010BBA1FE1481200DA8B20 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
-		18010BBC1FE148F400DA8B20 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		18010BBC1FE148F400DA8B20 /* RoverCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverCamera.swift; sourceTree = "<group>"; };
+		18010BBE1FE14E4600DA8B20 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		18010BC01FE1500D00DA8B20 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		18010BC21FE150D000DA8B20 /* JSONDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
+		18010BC41FE1611900DA8B20 /* NasaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaClient.swift; sourceTree = "<group>"; };
+		18EAF7CF1FE293C100B1691B /* APIClient2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient2.swift; sourceTree = "<group>"; };
 		18F595851FE0196C00798AD6 /* NASAApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F595881FE0196C00798AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F5958A1FE0196C00798AD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				18010BBA1FE1481200DA8B20 /* Rover.swift */,
-				18010BBC1FE148F400DA8B20 /* Camera.swift */,
+				18010BBC1FE148F400DA8B20 /* RoverCamera.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,7 +129,12 @@
 			isa = PBXGroup;
 			children = (
 				18F595A91FE01AF000798AD6 /* Endpoint.swift */,
+				18010BC21FE150D000DA8B20 /* JSONDecodable.swift */,
 				18F595AB1FE01B4F00798AD6 /* Constants.swift */,
+				18010BBE1FE14E4600DA8B20 /* APIClient.swift */,
+				18010BC41FE1611900DA8B20 /* NasaClient.swift */,
+				18010BC01FE1500D00DA8B20 /* Result.swift */,
+				18EAF7CF1FE293C100B1691B /* APIClient2.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -227,12 +242,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18010BBD1FE148F400DA8B20 /* Camera.swift in Sources */,
+				18010BC31FE150D000DA8B20 /* JSONDecodable.swift in Sources */,
+				18010BBD1FE148F400DA8B20 /* RoverCamera.swift in Sources */,
+				18010BBF1FE14E4600DA8B20 /* APIClient.swift in Sources */,
+				18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */,
 				18010BBB1FE1481200DA8B20 /* Rover.swift in Sources */,
 				18F5958B1FE0196C00798AD6 /* ViewController.swift in Sources */,
 				18F595AA1FE01AF000798AD6 /* Endpoint.swift in Sources */,
 				18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */,
+				18010BC11FE1500D00DA8B20 /* Result.swift in Sources */,
 				18F595AC1FE01B4F00798AD6 /* Constants.swift in Sources */,
+				18EAF7D01FE293C100B1691B /* APIClient2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
