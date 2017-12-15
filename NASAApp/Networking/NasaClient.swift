@@ -32,7 +32,9 @@ class NASAClient: APIClient {
     }
     
     /// Retrieve images from all rovers
-    func getRoverPhotos(rovers: [Rover], completion: @escaping (Result<[Rover], APIError>) -> Void) {
+    func getRoverPhotos(rovers: [Rover], completion: @escaping (Result<[RoverPhoto], APIError>) -> Void) {
+        
+        var allRoversPhotos = [RoverPhoto]()
         
         for rover in rovers {
             let roverNameNocaps = rover.name.lowercased()
@@ -40,18 +42,24 @@ class NASAClient: APIClient {
             let endpoint = MarsRoverEndpoint.imageSearchByRover(rover: roverNameNocaps)
             let request = endpoint.request
             
-            fetch(with: request, parse: { json -> [Rover] in
-                guard let allRovers = json["rovers"] as? [[String: Any]] else { return [] }
-                return allRovers.flatMap { Rover(json: $0) }
-            }, completion: completion)
-            
-            
+            fetch(with: request, parse: { json -> [RoverPhoto] in
+                guard let allRovers = json["photos"] as? [[String: Any]] else { return [] }
+                return allRovers.flatMap { RoverPhoto(json: $0) }
+            }) { result in
+                switch result {
+                case .success(let rovers):
+                    allRoversPhotos += rovers // Add photos of that rover to allRoversPhotos
+                case .failure(let error):
+                    completion(Result.failure(error))
+                    return
+                }
+                
+            }
             
         }
         
-        
-        
-        
+        completion(Result.success(allRoversPhotos))
+    
     }
     
 }
