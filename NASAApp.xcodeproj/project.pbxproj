@@ -22,6 +22,7 @@
 		18F595AA1FE01AF000798AD6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595A91FE01AF000798AD6 /* Endpoint.swift */; };
 		18F595AC1FE01B4F00798AD6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595AB1FE01B4F00798AD6 /* Constants.swift */; };
 		18F9AB211FE3DC740019BEA9 /* RoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9AB201FE3DC740019BEA9 /* RoverPhoto.swift */; };
+		18F9AB231FE41B8B0019BEA9 /* ideas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9AB221FE41B8B0019BEA9 /* ideas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		18F595A91FE01AF000798AD6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		18F595AB1FE01B4F00798AD6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18F9AB201FE3DC740019BEA9 /* RoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhoto.swift; sourceTree = "<group>"; };
+		18F9AB221FE41B8B0019BEA9 /* ideas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ideas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				18F595AB1FE01B4F00798AD6 /* Constants.swift */,
 				18010BBE1FE14E4600DA8B20 /* APIClient.swift */,
 				18010BC41FE1611900DA8B20 /* NasaClient.swift */,
+				18F9AB221FE41B8B0019BEA9 /* ideas.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				18010BC31FE150D000DA8B20 /* JSONDecodable.swift in Sources */,
 				18010BBD1FE148F400DA8B20 /* RoverCamera.swift in Sources */,
 				18010BBF1FE14E4600DA8B20 /* APIClient.swift in Sources */,
+				18F9AB231FE41B8B0019BEA9 /* ideas.swift in Sources */,
 				18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */,
 				18010BBB1FE1481200DA8B20 /* Rover.swift in Sources */,
 				18F5958B1FE0196C00798AD6 /* ViewController.swift in Sources */,
