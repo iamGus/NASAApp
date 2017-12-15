@@ -55,6 +55,8 @@ enum MarsRoverEndpoint {
         }
     }
     
+    /*
+    
     enum SortRovers: CustomStringConvertible {
         case curiosity, opportunity, spirit
         
@@ -66,17 +68,19 @@ enum MarsRoverEndpoint {
             }
         }
     }
+ 
+ */
     
     //case curiousity(camera: SortRoverCameras)
     //case opportunity(camera: SortRoverCameras)
     //case spirit(camera: SortRoverCameras)
     case roverTypes
-    case imageSearchByRover(rover: SortRovers, camera: SortRoverCameras)
+    case imageSearchByRover(rover: String)
 }
 
 extension MarsRoverEndpoint: Endpoint {
     var base: String {
-        return "https://api.nasa.gov"
+        return NetworkConstants.baseEndpoint
     }
     
     
@@ -86,12 +90,12 @@ extension MarsRoverEndpoint: Endpoint {
         //case .opportunity: return "/mars-photos/api/v1/rovers/opportunity/photos"
         //case .spirit: return "/mars-photos/api/v1/rovers/spirit/photos"
         case .roverTypes: return "/mars-photos/api/v1/rovers"
-        case .imageSearchByRover(let options): return "/mars-photos/api/v1/rovers/\(options.rover)/photos"
+        case .imageSearchByRover(let rover): return "/mars-photos/api/v1/rovers/\(rover)/photos"
         }
     }
     
     private var apiKey: String {
-        return "ybUbAKJRZJ9QPXO1qI8SI2X3ZVyiOKdcJefLL1dR"
+        return NetworkConstants.apiKey
     }
     
     var queryItem: [URLQueryItem] {
@@ -101,22 +105,14 @@ extension MarsRoverEndpoint: Endpoint {
             return [
             URLQueryItem(name: "api_key", value: apiKey)
             ]
-        case .imageSearchByRover( _, let camera):
-            if camera != .all {
+        case .imageSearchByRover( _):
                 return [
                     URLQueryItem(name: "api_key", value: apiKey),
-                    URLQueryItem(name: "camera", value: camera.description),
-                    URLQueryItem(name: "sol", value: "1000")
+                    URLQueryItem(name: "sol", value: "1000"),
+                    URLQueryItem(name: "page", value: "1")
                 ]
             }
-            return [
-                URLQueryItem(name: "api_key", value: apiKey),
-                URLQueryItem(name: "sol", value: "1000")
-            ]
-            
         }
-    }
-    
     
 }
 

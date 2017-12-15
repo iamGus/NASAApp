@@ -19,6 +19,7 @@ extension RoverCamera: JSONDecodable {
         struct Key {
             static let cameraName = "name"
             static let cameraFullName = "full_name"
+            static let cameraRoverID = "rover_id"
         }
         
         guard let cameraName = json[Key.cameraName] as? String,
@@ -26,14 +27,22 @@ extension RoverCamera: JSONDecodable {
                 return nil
         }
         
+        if let cameraRoverID = json[Key.cameraRoverID] as? Int {
+            self.roverID = [cameraRoverID]
+        } else {
+            self.roverID = []
+        }
+        
         self.name = cameraName
         self.fullName = cameraFullName
-        self.roverID = []
+       
     }
+    
 }
 
 extension RoverCamera {
     
+    /// Gets cameras from all rovers and returns cameras with no duplicates plus icludes the rover ID in each camera that the rover can use.
     static func addCamerasAndRemoveDups(rovers: [Rover]) -> [RoverCamera] {
         
         var combinedCameras = [RoverCamera]()
@@ -49,8 +58,8 @@ extension RoverCamera {
         // Do feel this is a bit of a tree of doom! Try to improve later
         for rover in rovers {
             for camera in rover.cameras {
-                for (index, allCamera) in combinedCameras.enumerated() {
-                    if camera.name == allCamera.name {
+                for (index, eachCombinedCamera) in combinedCameras.enumerated() {
+                    if camera.name == eachCombinedCamera.name {
                         combinedCameras[index].roverID.append(rover.id)
                     }
                 }

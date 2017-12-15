@@ -10,7 +10,6 @@ import Foundation
 
 struct Rover: JSONDecodable {
   
-
     let id: Int
     let name: String
     let landingDate: Date
@@ -55,6 +54,7 @@ struct Rover: JSONDecodable {
                 return nil
         }
         
+        // Format dates into date format
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "yyyy-MM-dd"

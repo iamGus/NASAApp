@@ -19,7 +19,7 @@ class NASAClient: APIClient {
     convenience init() {
         self.init(configuration: .default)
     }
-    /// Retrieve all genres from TMDb
+    /// Retrieve all rovers from Nasa
     func getRovers(completion: @escaping (Result<[Rover], APIError>) -> Void) {
         
         let endpoint = MarsRoverEndpoint.roverTypes
@@ -29,6 +29,29 @@ class NASAClient: APIClient {
             guard let allRovers = json["rovers"] as? [[String: Any]] else { return [] }
             return allRovers.flatMap { Rover(json: $0) }
         }, completion: completion)
+    }
+    
+    /// Retrieve images from all rovers
+    func getRoverPhotos(rovers: [Rover], completion: @escaping (Result<[Rover], APIError>) -> Void) {
+        
+        for rover in rovers {
+            let roverNameNocaps = rover.name.lowercased()
+            
+            let endpoint = MarsRoverEndpoint.imageSearchByRover(rover: roverNameNocaps)
+            let request = endpoint.request
+            
+            fetch(with: request, parse: { json -> [Rover] in
+                guard let allRovers = json["rovers"] as? [[String: Any]] else { return [] }
+                return allRovers.flatMap { Rover(json: $0) }
+            }, completion: completion)
+            
+            
+            
+        }
+        
+        
+        
+        
     }
     
 }
