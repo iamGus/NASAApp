@@ -24,6 +24,8 @@
 		18F9AB211FE3DC740019BEA9 /* RoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9AB201FE3DC740019BEA9 /* RoverPhoto.swift */; };
 		18F9AB231FE41B8B0019BEA9 /* ideas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9AB221FE41B8B0019BEA9 /* ideas.swift */; };
 		18FB776A1FE7B36300BABD99 /* RoverMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB77691FE7B36300BABD99 /* RoverMasterController.swift */; };
+		18FB776E1FE7B77600BABD99 /* RoverDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB776D1FE7B77600BABD99 /* RoverDataSource.swift */; };
+		18FB77701FE7BA8500BABD99 /* RoverPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB776F1FE7BA8500BABD99 /* RoverPhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		18F9AB201FE3DC740019BEA9 /* RoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhoto.swift; sourceTree = "<group>"; };
 		18F9AB221FE41B8B0019BEA9 /* ideas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ideas.swift; sourceTree = "<group>"; };
 		18FB77691FE7B36300BABD99 /* RoverMasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverMasterController.swift; sourceTree = "<group>"; };
+		18FB776D1FE7B77600BABD99 /* RoverDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDataSource.swift; sourceTree = "<group>"; };
+		18FB776F1FE7BA8500BABD99 /* RoverPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				18F5958C1FE0196C00798AD6 /* Main.storyboard */,
+				18FB776F1FE7BA8500BABD99 /* RoverPhotoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 		18FB776C1FE7B5AE00BABD99 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				18FB776D1FE7B77600BABD99 /* RoverDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -275,11 +281,13 @@
 				18F9AB211FE3DC740019BEA9 /* RoverPhoto.swift in Sources */,
 				18010BC31FE150D000DA8B20 /* JSONDecodable.swift in Sources */,
 				18010BBD1FE148F400DA8B20 /* RoverCamera.swift in Sources */,
+				18FB776E1FE7B77600BABD99 /* RoverDataSource.swift in Sources */,
 				18010BBF1FE14E4600DA8B20 /* APIClient.swift in Sources */,
 				18FB776A1FE7B36300BABD99 /* RoverMasterController.swift in Sources */,
 				18F9AB231FE41B8B0019BEA9 /* ideas.swift in Sources */,
 				18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */,
 				18010BBB1FE1481200DA8B20 /* Rover.swift in Sources */,
+				18FB77701FE7BA8500BABD99 /* RoverPhotoCell.swift in Sources */,
 				18F5958B1FE0196C00798AD6 /* LandingController.swift in Sources */,
 				18F595AA1FE01AF000798AD6 /* Endpoint.swift in Sources */,
 				18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */,

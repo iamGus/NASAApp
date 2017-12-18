@@ -44,19 +44,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4pn-Ea-ckQ">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="110" height="110"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="roverCell" id="tIx-ny-4Qa">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoverPhotoCell" id="tIx-ny-4Qa" customClass="RoverPhotoCell" customModule="NASAApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4wE-Io-MfR">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4wE-Io-MfR" secondAttribute="trailing" id="8P1-Ys-HQh"/>
+                                    <constraint firstItem="4wE-Io-MfR" firstAttribute="top" secondItem="tIx-ny-4Qa" secondAttribute="top" id="Uea-BW-Icn"/>
+                                    <constraint firstAttribute="bottom" secondItem="4wE-Io-MfR" secondAttribute="bottom" id="mOM-wR-cf6"/>
+                                    <constraint firstItem="4wE-Io-MfR" firstAttribute="leading" secondItem="tIx-ny-4Qa" secondAttribute="leading" id="r8d-de-qga"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="photoView" destination="4wE-Io-MfR" id="61w-oL-wkO"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
