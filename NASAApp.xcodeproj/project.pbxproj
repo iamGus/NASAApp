@@ -14,7 +14,7 @@
 		18010BC31FE150D000DA8B20 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC21FE150D000DA8B20 /* JSONDecodable.swift */; };
 		18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC41FE1611900DA8B20 /* NasaClient.swift */; };
 		18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595881FE0196C00798AD6 /* AppDelegate.swift */; };
-		18F5958B1FE0196C00798AD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5958A1FE0196C00798AD6 /* ViewController.swift */; };
+		18F5958B1FE0196C00798AD6 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5958A1FE0196C00798AD6 /* LandingController.swift */; };
 		18F5958E1FE0196C00798AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F5958C1FE0196C00798AD6 /* Main.storyboard */; };
 		18F595901FE0196C00798AD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F5958F1FE0196C00798AD6 /* Assets.xcassets */; };
 		18F595931FE0196C00798AD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F595911FE0196C00798AD6 /* LaunchScreen.storyboard */; };
@@ -23,6 +23,7 @@
 		18F595AC1FE01B4F00798AD6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595AB1FE01B4F00798AD6 /* Constants.swift */; };
 		18F9AB211FE3DC740019BEA9 /* RoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9AB201FE3DC740019BEA9 /* RoverPhoto.swift */; };
 		18F9AB231FE41B8B0019BEA9 /* ideas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9AB221FE41B8B0019BEA9 /* ideas.swift */; };
+		18FB776A1FE7B36300BABD99 /* RoverMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB77691FE7B36300BABD99 /* RoverMasterController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,7 @@
 		18010BC41FE1611900DA8B20 /* NasaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaClient.swift; sourceTree = "<group>"; };
 		18F595851FE0196C00798AD6 /* NASAApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F595881FE0196C00798AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18F5958A1FE0196C00798AD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18F5958A1FE0196C00798AD6 /* LandingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
 		18F5958D1FE0196C00798AD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18F5958F1FE0196C00798AD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18F595921FE0196C00798AD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		18F595AB1FE01B4F00798AD6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18F9AB201FE3DC740019BEA9 /* RoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhoto.swift; sourceTree = "<group>"; };
 		18F9AB221FE41B8B0019BEA9 /* ideas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ideas.swift; sourceTree = "<group>"; };
+		18FB77691FE7B36300BABD99 /* RoverMasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverMasterController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +109,12 @@
 		18F595871FE0196C00798AD6 /* NASAApp */ = {
 			isa = PBXGroup;
 			children = (
+				18FB77681FE7B2F500BABD99 /* Controller */,
 				18010BB91FE1472700DA8B20 /* Model */,
 				18F595A81FE01AD800798AD6 /* Networking */,
+				18FB776B1FE7B56400BABD99 /* Views */,
+				18FB776C1FE7B5AE00BABD99 /* DataSource */,
 				18F595881FE0196C00798AD6 /* AppDelegate.swift */,
-				18F5958A1FE0196C00798AD6 /* ViewController.swift */,
-				18F5958C1FE0196C00798AD6 /* Main.storyboard */,
 				18F5958F1FE0196C00798AD6 /* Assets.xcassets */,
 				18F595911FE0196C00798AD6 /* LaunchScreen.storyboard */,
 				18F595941FE0196C00798AD6 /* Info.plist */,
@@ -140,6 +143,30 @@
 				18F9AB221FE41B8B0019BEA9 /* ideas.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		18FB77681FE7B2F500BABD99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18F5958A1FE0196C00798AD6 /* LandingController.swift */,
+				18FB77691FE7B36300BABD99 /* RoverMasterController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18FB776B1FE7B56400BABD99 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18F5958C1FE0196C00798AD6 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		18FB776C1FE7B5AE00BABD99 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,10 +276,11 @@
 				18010BC31FE150D000DA8B20 /* JSONDecodable.swift in Sources */,
 				18010BBD1FE148F400DA8B20 /* RoverCamera.swift in Sources */,
 				18010BBF1FE14E4600DA8B20 /* APIClient.swift in Sources */,
+				18FB776A1FE7B36300BABD99 /* RoverMasterController.swift in Sources */,
 				18F9AB231FE41B8B0019BEA9 /* ideas.swift in Sources */,
 				18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */,
 				18010BBB1FE1481200DA8B20 /* Rover.swift in Sources */,
-				18F5958B1FE0196C00798AD6 /* ViewController.swift in Sources */,
+				18F5958B1FE0196C00798AD6 /* LandingController.swift in Sources */,
 				18F595AA1FE01AF000798AD6 /* Endpoint.swift in Sources */,
 				18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */,
 				18010BC11FE1500D00DA8B20 /* Result.swift in Sources */,

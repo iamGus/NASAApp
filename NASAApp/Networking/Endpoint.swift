@@ -108,7 +108,7 @@ extension MarsRoverEndpoint: Endpoint {
         case .imageSearchByRover( _):
                 return [
                     URLQueryItem(name: "api_key", value: apiKey),
-                    URLQueryItem(name: "sol", value: "1000"),
+                    URLQueryItem(name: "sol", value: "1"),
                     URLQueryItem(name: "page", value: "1")
                 ]
             }

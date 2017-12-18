@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LandingController.swift
 //  NASAApp
 //
 //  Created by Angus Muller on 12/12/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LandingController: UIViewController {
     
     var rovers = [Rover]()
     var cameras = [RoverCamera]()
