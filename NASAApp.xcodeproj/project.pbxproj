@@ -27,6 +27,7 @@
 		18FB77701FE7BA8500BABD99 /* RoverPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB776F1FE7BA8500BABD99 /* RoverPhotoCell.swift */; };
 		18FB77721FE7C8E500BABD99 /* PhotoDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB77711FE7C8E500BABD99 /* PhotoDownloader.swift */; };
 		18FB77741FE7CC5200BABD99 /* PendingOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB77731FE7CC5200BABD99 /* PendingOperations.swift */; };
+		18FB77771FE7CCF700BABD99 /* RoverPhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB77761FE7CCF700BABD99 /* RoverPhotoCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		18FB776F1FE7BA8500BABD99 /* RoverPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoCell.swift; sourceTree = "<group>"; };
 		18FB77711FE7C8E500BABD99 /* PhotoDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDownloader.swift; sourceTree = "<group>"; };
 		18FB77731FE7CC5200BABD99 /* PendingOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOperations.swift; sourceTree = "<group>"; };
+		18FB77761FE7CCF700BABD99 /* RoverPhotoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				18FB77681FE7B2F500BABD99 /* Controller */,
 				18010BB91FE1472700DA8B20 /* Model */,
 				18F595A81FE01AD800798AD6 /* Networking */,
+				18FB77751FE7CCC200BABD99 /* View Models */,
 				18FB776B1FE7B56400BABD99 /* Views */,
 				18FB776C1FE7B5AE00BABD99 /* DataSource */,
 				18F595881FE0196C00798AD6 /* AppDelegate.swift */,
@@ -176,6 +179,14 @@
 				18FB776D1FE7B77600BABD99 /* RoverDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		18FB77751FE7CCC200BABD99 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				18FB77761FE7CCF700BABD99 /* RoverPhotoCellViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 				18FB776E1FE7B77600BABD99 /* RoverDataSource.swift in Sources */,
 				18010BBF1FE14E4600DA8B20 /* APIClient.swift in Sources */,
 				18FB776A1FE7B36300BABD99 /* RoverMasterController.swift in Sources */,
+				18FB77771FE7CCF700BABD99 /* RoverPhotoCellViewModel.swift in Sources */,
 				18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */,
 				18010BBB1FE1481200DA8B20 /* Rover.swift in Sources */,
 				18FB77721FE7C8E500BABD99 /* PhotoDownloader.swift in Sources */,

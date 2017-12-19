@@ -32,7 +32,6 @@ class RoverMasterController: UICollectionViewController {
             case .success(let rovers):
                 self?.rovers = rovers
                 self?.cameras = RoverCamera.addCamerasAndRemoveDups(rovers: rovers)
-             
                 self?.getAllRoversPhotos()
             case.failure(let error):
                 switch error {
@@ -60,7 +59,7 @@ class RoverMasterController: UICollectionViewController {
             switch result {
             case .success(let photos):
                 self?.dataSource.update(with: photos)
-                
+                self?.collectionView?.reloadData()
             case .failure(let error):
                 switch error{
                 case .requestFailed: print("request failed")

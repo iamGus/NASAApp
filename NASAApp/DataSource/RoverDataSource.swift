@@ -10,6 +10,7 @@ import UIKit
 
 class RoverDataSource: NSObject, UICollectionViewDataSource {
     
+    private let pendingOperations = PendingOperations()
     private let collectionView: UICollectionView
     private var data = [RoverPhoto]()
     
@@ -34,8 +35,14 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: RoverPhotoCell.reuseIdentifier, for: indexPath) as! RoverPhotoCell
         
-        let rover = data[indexPath.row]
-        //photoCell.photoView = rover.
+        let roverPhoto = data[indexPath.row]
+        let viewModel = RoverPhotoCellViewModel(roverPhoto: roverPhoto) // Get viewmodel of cell
+        
+        photoCell.configure(with: viewModel) // pass viewmodel of cell to cell view
+        
+        if roverPhoto.photoState == .placeholder {
+            downloadPhotoForRover(roverPhoto, atIndexPath: indexPath)
+        }
         
         return photoCell
     }
@@ -47,5 +54,31 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
         return data[indexPath.row]
     }
     
+    func downloadPhotoForRover(_ roverPhoto: RoverPhoto, atIndexPath indexPath: IndexPath) {
+        //If Operation for that cell in already in progress then return
+        if let _ = pendingOperations.downloadsInProgress[indexPath] {
+            return
+        }
+        
+        let downloader = PhotoDownloader(roverPhoto: roverPhoto)
+        
+        // Run photo downloader on completion block
+        downloader.completionBlock = {
+            if downloader.isCancelled {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                // Update pending operations class
+                self.pendingOperations.downloadsInProgress.removeValue(forKey: indexPath)
+                self.collectionView.reloadItems(at: [indexPath])
+                self.collectionView.reloadData()
+            }
+        }
+        
+        pendingOperations.downloadsInProgress[indexPath] = downloader
+        pendingOperations.downloadQueue.addOperation(downloader)
+        
+    }
     
 }

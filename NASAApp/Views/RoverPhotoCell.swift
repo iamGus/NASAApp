@@ -13,6 +13,8 @@ final class RoverPhotoCell: UICollectionViewCell {
     
     @IBOutlet weak var photoView: UIImageView!
     
-    
+    func configure(with viewModel: RoverPhotoCellViewModel) {
+        photoView.image = viewModel.image
+    }
     
 }
