@@ -16,6 +16,7 @@ struct RoverPhotoCellViewModel {
 extension RoverPhotoCellViewModel {
     init(roverPhoto: RoverPhoto) {
         // If rover photo state marked as downloaded then use rover image, otherwise use placeholder
+        
         self.image = roverPhoto.photoState == .downloaded ? roverPhoto.photo! : #imageLiteral(resourceName: "black_photo_btn")
         
     }

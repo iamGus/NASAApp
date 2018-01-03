@@ -14,7 +14,7 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
     private var collectionView: UICollectionView
     private var data = [RoverPhoto]()
     
-    init(collectionView: UICollectionView) {
+    init(roverPhotos: [RoverPhoto], collectionView: UICollectionView) {
         self.collectionView = collectionView
         super.init()
     }
@@ -33,6 +33,7 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: RoverPhotoCell.reuseIdentifier, for: indexPath) as! RoverPhotoCell
         
         let roverPhoto = data[indexPath.row]

@@ -1,20 +1,19 @@
 //
-//  RoverMasterController.swift
+//  RoverMasterController2.swift
 //  NASAApp
 //
-//  Created by Angus Muller on 18/12/2017.
-//  Copyright © 2017 Angus Muller. All rights reserved.
+//  Created by Angus Muller on 03/01/2018.
+//  Copyright © 2018 Angus Muller. All rights reserved.
 //
 
 import UIKit
 
-
-class RoverMasterController: UICollectionViewController {
+class RoverMasterController2: UIViewController {
     
-   
+    @IBOutlet weak var collectionView: UICollectionView!
     
     lazy var dataSource: RoverDataSource = {
-        return RoverDataSource(roverPhotos: [], collectionView: self.collectionView!) // USing !
+        return RoverDataSource(roverPhotos: [], collectionView: self.collectionView) 
     }()
     
     // Rover Properties from Nasa API
@@ -25,8 +24,13 @@ class RoverMasterController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.register(RoverPhotoCell.self, forCellWithReuseIdentifier: RoverPhotoCell.reuseIdentifier)
+        //let nib = UINib(nibName: "RoverPhotoCell", bundle: nil)
+        //collectionView.register(nib, forCellWithReuseIdentifier: RoverPhotoCell.reuseIdentifier)
+        collectionView.dataSource = dataSource
         
-        collectionView!.dataSource = dataSource
+        
+        //collectionView.delegate = dataSource
         //collectionView?.delegate = self
         
         // Get Genre data from tmdb and update datasource
@@ -46,12 +50,8 @@ class RoverMasterController: UICollectionViewController {
                 }
             }
         }
-
-    
     }
-    
-    
-    
+
     func getAllRoversPhotos() {
         guard let allRovers = rovers else {
             // Add error that rovers could not be loaded
@@ -63,7 +63,7 @@ class RoverMasterController: UICollectionViewController {
             case .success(let photos):
                 self?.dataSource.update(with: photos)
                 self?.collectionView!.reloadData()
-                //self?.dataSource.update(collectionView: (self?.collectionView)!)
+            //self?.dataSource.update(collectionView: (self?.collectionView)!)
             case .failure(let error):
                 switch error{
                 case .requestFailed: print("request failed")
@@ -74,41 +74,22 @@ class RoverMasterController: UICollectionViewController {
                 }
             }
         }
+    }
+    
+    
+    @IBAction func updateView(_ sender: Any) {
+        collectionView.reloadData()
     }
     
 
     /*
-    func testPrint() {
-        for rover in rovers {
-            print("Name: \(rover.name)")
-            print("Id: \(rover.id)")
-            print("Cameras: \(rover.cameras.count)")
-            print("-------------")
-        }
-        
-        print(cameras.count)
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-    
-    func getAllRoversPhotos() {
-        client.getPhotosAll(rovers: rovers) { [weak self]  result in
-            switch result {
-            case .success(let photos):
-                self?.allPhotos = photos
-                self?.testPrint2()
-            case .failure(let error):
-                switch error{
-                case .requestFailed: print("request failed")
-                case .responseUnsuccessful: print("\(APIError.responseUnsuccessful.errorDescription)")
-                case .invalidData: print("\(APIError.invalidData.errorDescription)")
-                case .jsonConversionFailure: print("\(APIError.jsonConversionFailure.errorDescription)")
-                case .jsonParsingFailure: print("\(APIError.jsonParsingFailure.errorDescription)")
-                }
-            }
-        }
-    }
-    
-    func testPrint2() {
-        print(allPhotos.count)
-    }
-*/
+    */
+
 }
