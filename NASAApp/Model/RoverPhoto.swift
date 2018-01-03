@@ -20,7 +20,7 @@ struct RoverPhoto {
     let sol: Int
     let earthDate: Date
     let camera: RoverCamera
-    let photoUrl: URL
+    let photoUrl: String
     var photo: UIImage?
     var photoState = RoverImageState.placeholder
 }
@@ -38,8 +38,7 @@ extension RoverPhoto: JSONDecodable {
         guard let photoID = json[Key.photoID] as? Int,
             let photoSol = json[Key.photoSol] as? Int,
             let photoEarthDate = json[Key.photoEarthDate] as? String,
-            let photoUrlString = json[Key.photoUrl] as? String,
-            let photoUrl = URL(string: photoUrlString) else {
+            let photoUrlString = json[Key.photoUrl] as? String else {
                 return nil
         }
         
@@ -61,7 +60,7 @@ extension RoverPhoto: JSONDecodable {
         self.sol = photoSol
         self.earthDate = PhotoEarthDateValue
         self.camera = photoCameraAsType
-        self.photoUrl = photoUrl
+        self.photoUrl = photoUrlString
         self.photo = nil
         
     }

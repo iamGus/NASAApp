@@ -24,7 +24,8 @@ class RoverMasterController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView?.dataSource = dataSource
+        collectionView!.dataSource = dataSource
+        //collectionView?.delegate = self
         
         // Get Genre data from tmdb and update datasource
         client.getRovers() { [weak self] result in
@@ -59,7 +60,8 @@ class RoverMasterController: UICollectionViewController {
             switch result {
             case .success(let photos):
                 self?.dataSource.update(with: photos)
-                self?.collectionView?.reloadData()
+                self?.collectionView!.reloadData()
+                //self?.dataSource.update(collectionView: (self?.collectionView)!)
             case .failure(let error):
                 switch error{
                 case .requestFailed: print("request failed")

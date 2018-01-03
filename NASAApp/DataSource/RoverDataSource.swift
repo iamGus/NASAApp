@@ -11,7 +11,7 @@ import UIKit
 class RoverDataSource: NSObject, UICollectionViewDataSource {
     
     private let pendingOperations = PendingOperations()
-    private let collectionView: UICollectionView
+    private var collectionView: UICollectionView
     private var data = [RoverPhoto]()
     
     init(collectionView: UICollectionView) {
@@ -70,6 +70,7 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
             
             DispatchQueue.main.async {
                 // Update pending operations class
+                print("update pending operation")
                 self.pendingOperations.downloadsInProgress.removeValue(forKey: indexPath)
                 self.collectionView.reloadItems(at: [indexPath])
                 self.collectionView.reloadData()
@@ -81,4 +82,9 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
         
     }
     
+    /*
+    func update(collectionView: UICollectionView) {
+        self.collectionView = collectionView
+    }
+    */
 }
