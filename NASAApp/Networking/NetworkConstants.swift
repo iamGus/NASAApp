@@ -11,4 +11,5 @@ import Foundation
 struct NetworkConstants {
     static let baseEndpoint = "https://api.nasa.gov"
     static let apiKey = "ybUbAKJRZJ9QPXO1qI8SI2X3ZVyiOKdcJefLL1dR"
+    static let thumbnailServer = "http://185.136.234.15:8000/unsafe/110x110/"
 }

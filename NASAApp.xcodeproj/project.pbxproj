@@ -21,9 +21,8 @@
 		18F595931FE0196C00798AD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F595911FE0196C00798AD6 /* LaunchScreen.storyboard */; };
 		18F5959E1FE0196C00798AD6 /* NASAAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5959D1FE0196C00798AD6 /* NASAAppTests.swift */; };
 		18F595AA1FE01AF000798AD6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595A91FE01AF000798AD6 /* Endpoint.swift */; };
-		18F595AC1FE01B4F00798AD6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595AB1FE01B4F00798AD6 /* Constants.swift */; };
+		18F595AC1FE01B4F00798AD6 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595AB1FE01B4F00798AD6 /* NetworkConstants.swift */; };
 		18F9AB211FE3DC740019BEA9 /* RoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9AB201FE3DC740019BEA9 /* RoverPhoto.swift */; };
-		18FB776A1FE7B36300BABD99 /* RoverMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB77691FE7B36300BABD99 /* RoverMasterController.swift */; };
 		18FB776E1FE7B77600BABD99 /* RoverDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB776D1FE7B77600BABD99 /* RoverDataSource.swift */; };
 		18FB77701FE7BA8500BABD99 /* RoverPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB776F1FE7BA8500BABD99 /* RoverPhotoCell.swift */; };
 		18FB77721FE7C8E500BABD99 /* PhotoDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB77711FE7C8E500BABD99 /* PhotoDownloader.swift */; };
@@ -60,9 +59,8 @@
 		18F5959D1FE0196C00798AD6 /* NASAAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAppTests.swift; sourceTree = "<group>"; };
 		18F5959F1FE0196C00798AD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18F595A91FE01AF000798AD6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		18F595AB1FE01B4F00798AD6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		18F595AB1FE01B4F00798AD6 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		18F9AB201FE3DC740019BEA9 /* RoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhoto.swift; sourceTree = "<group>"; };
-		18FB77691FE7B36300BABD99 /* RoverMasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverMasterController.swift; sourceTree = "<group>"; };
 		18FB776D1FE7B77600BABD99 /* RoverDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDataSource.swift; sourceTree = "<group>"; };
 		18FB776F1FE7BA8500BABD99 /* RoverPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoCell.swift; sourceTree = "<group>"; };
 		18FB77711FE7C8E500BABD99 /* PhotoDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDownloader.swift; sourceTree = "<group>"; };
@@ -148,7 +146,7 @@
 				18F595A91FE01AF000798AD6 /* Endpoint.swift */,
 				18010BC21FE150D000DA8B20 /* JSONDecodable.swift */,
 				18010BC01FE1500D00DA8B20 /* Result.swift */,
-				18F595AB1FE01B4F00798AD6 /* Constants.swift */,
+				18F595AB1FE01B4F00798AD6 /* NetworkConstants.swift */,
 				18010BBE1FE14E4600DA8B20 /* APIClient.swift */,
 				18010BC41FE1611900DA8B20 /* NasaClient.swift */,
 				18FB77711FE7C8E500BABD99 /* PhotoDownloader.swift */,
@@ -161,7 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				18F5958A1FE0196C00798AD6 /* LandingController.swift */,
-				18FB77691FE7B36300BABD99 /* RoverMasterController.swift */,
 				183265011FFD1A770089FB6B /* RoverMasterController2.swift */,
 			);
 			path = Controller;
@@ -301,7 +298,6 @@
 				183265021FFD1A780089FB6B /* RoverMasterController2.swift in Sources */,
 				18FB776E1FE7B77600BABD99 /* RoverDataSource.swift in Sources */,
 				18010BBF1FE14E4600DA8B20 /* APIClient.swift in Sources */,
-				18FB776A1FE7B36300BABD99 /* RoverMasterController.swift in Sources */,
 				18FB77771FE7CCF700BABD99 /* RoverPhotoCellViewModel.swift in Sources */,
 				18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */,
 				18010BBB1FE1481200DA8B20 /* Rover.swift in Sources */,
@@ -312,7 +308,7 @@
 				18F595AA1FE01AF000798AD6 /* Endpoint.swift in Sources */,
 				18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */,
 				18010BC11FE1500D00DA8B20 /* Result.swift in Sources */,
-				18F595AC1FE01B4F00798AD6 /* Constants.swift in Sources */,
+				18F595AC1FE01B4F00798AD6 /* NetworkConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

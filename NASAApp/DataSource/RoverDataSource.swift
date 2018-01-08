@@ -39,11 +39,10 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoverCell", for: indexPath) as! RoverPhotoCell
+        let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: RoverPhotoCell.reuseIdentifier, for: indexPath) as! RoverPhotoCell
         
         let roverPhoto = data[indexPath.row]
         let viewModel = RoverPhotoCellViewModel(roverPhoto: roverPhoto) // Get viewmodel of cell
-        print(indexPath.row)
         
         photoCell.configure(with: viewModel) // pass viewmodel of cell to cell view
         
@@ -77,10 +76,8 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
             
             DispatchQueue.main.async {
                 // Update pending operations class
-                print("update pending operation")
                 self.pendingOperations.downloadsInProgress.removeValue(forKey: indexPath)
                 self.collectionView.reloadItems(at: [indexPath])
-                //self.collectionView.reloadData()
             }
         }
         
@@ -88,10 +85,4 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
         pendingOperations.downloadQueue.addOperation(downloader)
         
     }
-    
-    /*
-    func update(collectionView: UICollectionView) {
-        self.collectionView = collectionView
-    }
-    */
 }

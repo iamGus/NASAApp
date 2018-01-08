@@ -23,7 +23,7 @@ class PhotoDownloader: Operation {
         }
         
         // Add thumbnail server url to front of rover url
-        guard let url = URL(string: "http://185.136.234.15:8000/unsafe/110x110/\(roverPhoto.photoUrl)") else {
+        guard let url = URL(string: "\(NetworkConstants.thumbnailServer)\(roverPhoto.photoUrl)") else {
             return
         }
         
@@ -38,7 +38,7 @@ class PhotoDownloader: Operation {
             if imageData.count > 0 && (UIImage(data: imageData) != nil) {
                 roverPhoto.photo = UIImage(data: imageData)
                 roverPhoto.photoState = .downloaded
-                print("rover state is \(roverPhoto.photoState)")
+    
                 // If this does not work then mark as failed
             } else {
                 roverPhoto.photoState = .failed

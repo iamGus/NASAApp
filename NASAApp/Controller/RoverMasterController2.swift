@@ -24,14 +24,9 @@ class RoverMasterController2: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //collectionView.register(RoverPhotoCell.self, forCellWithReuseIdentifier: RoverPhotoCell.reuseIdentifier)
-        //let nib = UINib(nibName: "RoverPhotoCell", bundle: nil)
-        collectionView.register(RoverPhotoCell.self, forCellWithReuseIdentifier: "RoverCell")
+        
+        collectionView.register(RoverPhotoCell.self, forCellWithReuseIdentifier: RoverPhotoCell.reuseIdentifier)
         collectionView.dataSource = dataSource
-        
-        
-        //collectionView.delegate = dataSource
-        //collectionView?.delegate = self
         
         // Get Genre data from tmdb and update datasource
         client.getRovers() { [weak self] result in
