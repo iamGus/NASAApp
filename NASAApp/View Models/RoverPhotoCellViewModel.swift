@@ -17,7 +17,13 @@ extension RoverPhotoCellViewModel {
     init(roverPhoto: RoverPhoto) {
         // If rover photo state marked as downloaded then use rover image, otherwise use placeholder
         
-        self.image = roverPhoto.photoState == .downloaded ? roverPhoto.photo! : nil
+        if roverPhoto.photoState == .downloaded {
+            self.image = roverPhoto.photo
+            print("added photo")
+        } else {
+            self.image = nil
+        }
+        //self.image = roverPhoto.photoState == .downloaded ? roverPhoto.photo! : nil
         
     }
 }

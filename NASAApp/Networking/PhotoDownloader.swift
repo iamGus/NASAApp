@@ -7,9 +7,6 @@
 //
 
 import Foundation
-
-
-import Foundation
 import UIKit
 
 class PhotoDownloader: Operation {
@@ -50,6 +47,7 @@ class PhotoDownloader: Operation {
         } catch let error {
             roverPhoto.photoState = .failed
             print("image rover error: \(error)")
+            return
         }
     }
 }

@@ -15,7 +15,7 @@ enum RoverImageState {
     case failed
 }
 
-struct RoverPhoto {
+class RoverPhoto: NSObject, JSONDecodable {
     let id: Int
     let sol: Int
     let earthDate: Date
@@ -23,10 +23,9 @@ struct RoverPhoto {
     let photoUrl: String
     var photo: UIImage?
     var photoState = RoverImageState.placeholder
-}
 
-extension RoverPhoto: JSONDecodable {
-    init?(json: [String : Any]) {
+
+    required init?(json: [String : Any]) {
         struct Key {
             static let photoID = "id"
             static let photoSol = "sol"
@@ -64,4 +63,5 @@ extension RoverPhoto: JSONDecodable {
         self.photo = nil
         
     }
+
 }

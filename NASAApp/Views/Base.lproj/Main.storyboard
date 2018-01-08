@@ -61,27 +61,13 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoverPhotoCell" id="U5m-xA-sHV" customClass="RoverPhotoCell" customModule="NASAApp" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoverCell" id="U5m-xA-sHV" customClass="RoverPhotoCell" customModule="NASAApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yeg-Km-k5h">
-                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
-                                                </imageView>
-                                            </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="yeg-Km-k5h" firstAttribute="leading" secondItem="U5m-xA-sHV" secondAttribute="leading" id="Pi7-XA-l5f"/>
-                                            <constraint firstItem="yeg-Km-k5h" firstAttribute="top" secondItem="U5m-xA-sHV" secondAttribute="top" id="VLy-Kl-ViT"/>
-                                            <constraint firstAttribute="trailing" secondItem="yeg-Km-k5h" secondAttribute="trailing" id="krA-wj-sV9"/>
-                                            <constraint firstAttribute="bottom" secondItem="yeg-Km-k5h" secondAttribute="bottom" id="w8w-fl-RIP"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="photoView" destination="yeg-Km-k5h" id="9Lu-9W-4Cn"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
