@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoverMasterController2: UIViewController {
+class RoverMasterController2: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -27,6 +27,7 @@ class RoverMasterController2: UIViewController {
         
         collectionView.register(RoverPhotoCell.self, forCellWithReuseIdentifier: RoverPhotoCell.reuseIdentifier)
         collectionView.dataSource = dataSource
+        collectionView.delegate = self
         
         // Get Genre data from tmdb and update datasource
         client.getRovers() { [weak self] result in
@@ -77,14 +78,24 @@ class RoverMasterController2: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "RoverDetail", sender: nil)
     }
-    */
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RoverDetail" {
+            if let cell = sender as? RoverPhotoCell, let indexPath = collectionView.indexPath(for: cell), let detailController = segue.destination as? RoverDetailController {
+                
+                detailController.roverPhoto = dataSource.roverImage(at: indexPath)
+                
+            } else {
+                // Error handling
+            }
+        }
+    }
+ 
 
 }

@@ -19,10 +19,10 @@ extension RoverPhotoCellViewModel {
         
         if roverPhoto.photoState == .downloaded {
             self.image = roverPhoto.photo
-            print("added photo")
         } else {
             self.image = nil
         }
+        
         //self.image = roverPhoto.photoState == .downloaded ? roverPhoto.photo! : nil
         
     }

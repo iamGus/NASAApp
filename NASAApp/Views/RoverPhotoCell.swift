@@ -30,10 +30,6 @@ final class RoverPhotoCell: UICollectionViewCell {
         // Initialisation code
     }
     
-   
-    
-    
-    
     func configure(with viewModel: RoverPhotoCellViewModel) {
         imageView.image = viewModel.image
     }

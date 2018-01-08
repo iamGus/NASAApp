@@ -13,6 +13,7 @@ protocol JSONDecodable {
     ///
     /// Returns `nil` if the JSON dictionary does not contain all the values
     /// needed for instantiation of the conforming type
+    // Note this could be enhanced by creating seperate init for rovers so that Rover and Camera models do not have to have the rover type in the init
     init?(json: [String: Any], rover: Rover?)
 }
 

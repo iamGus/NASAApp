@@ -56,7 +56,7 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
     // MARK: - Helper
     
     // Return just that Rover for that selected row
-    func rover(at indexPath: IndexPath) -> RoverPhoto {
+    func roverImage(at indexPath: IndexPath) -> RoverPhoto {
         return data[indexPath.row]
     }
     
@@ -85,4 +85,6 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
         pendingOperations.downloadQueue.addOperation(downloader)
         
     }
+    
+    
 }
