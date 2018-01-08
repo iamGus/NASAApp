@@ -82,15 +82,15 @@ class RoverMasterController2: UIViewController, UICollectionViewDelegate {
     // MARK: - Navigation
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "RoverDetail", sender: nil)
+        self.performSegue(withIdentifier: "RoverDetail", sender: collectionView.cellForItem(at: indexPath))
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RoverDetail" {
+            print(sender.debugDescription)
             if let cell = sender as? RoverPhotoCell, let indexPath = collectionView.indexPath(for: cell), let detailController = segue.destination as? RoverDetailController {
                 
                 detailController.roverPhoto = dataSource.roverImage(at: indexPath)
-                
             } else {
                 // Error handling
             }

@@ -10,12 +10,17 @@ import UIKit
 
 class RoverDetailController: UIViewController {
     
+    @IBOutlet weak var roverPhotoView: UIImageView!
+    
+    
     var roverPhoto: RoverPhoto?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let fullSizeImage = roverPhoto {
+            roverPhotoView.image = fullSizeImage.photo
+        }
     }
 
   
