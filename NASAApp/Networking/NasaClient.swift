@@ -27,7 +27,7 @@ class NASAClient: APIClient {
         
         fetch(with: request, parse: { json -> [Rover] in
             guard let allRovers = json["rovers"] as? [[String: Any]] else { return [] }
-            return allRovers.flatMap { Rover(json: $0) }
+            return allRovers.flatMap { Rover(json: $0, rover: nil) }
         }, completion: completion)
     }
     
@@ -47,7 +47,7 @@ class NASAClient: APIClient {
             print(request)
                 self.fetch(with: request, parse: { json -> [RoverPhoto] in
                 guard let allRovers = json["photos"] as? [[String: Any]] else { return [] }
-                return allRovers.flatMap { RoverPhoto(json: $0) }
+                    return allRovers.flatMap { RoverPhoto(json: $0, rover: rover) }
                 
             }) { result in
                 switch result {

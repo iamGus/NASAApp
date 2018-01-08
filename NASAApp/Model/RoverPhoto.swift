@@ -23,9 +23,10 @@ class RoverPhoto: NSObject, JSONDecodable {
     let photoUrl: String
     var photo: UIImage?
     var photoState = RoverImageState.placeholder
+    var rover: Rover
 
 
-    required init?(json: [String : Any]) {
+    required init?(json: [String : Any], rover: Rover?) {
         struct Key {
             static let photoID = "id"
             static let photoSol = "sol"
@@ -42,7 +43,7 @@ class RoverPhoto: NSObject, JSONDecodable {
         }
         
         // Make type for camera data
-        guard let photoCamera = json[Key.photoCamera] as? [String: Any], let photoCameraAsType = RoverCamera(json: photoCamera) else {
+        guard let photoCamera = json[Key.photoCamera] as? [String: Any], let photoCameraAsType = RoverCamera(json: photoCamera, rover: nil) else {
             return nil
         }
         
@@ -55,12 +56,17 @@ class RoverPhoto: NSObject, JSONDecodable {
                 return nil
         }
         
+        guard let rover = rover else {
+            return nil
+        }
+        
         self.id = photoID
         self.sol = photoSol
         self.earthDate = PhotoEarthDateValue
         self.camera = photoCameraAsType
         self.photoUrl = photoUrlString
         self.photo = nil
+        self.rover = rover
         
     }
 

@@ -28,7 +28,7 @@ struct Rover: JSONDecodable {
         }
     }
     
-    init?(json: [String : Any]) {
+    init?(json: [String : Any], rover: Rover?) {
         struct Key {
             static let roverId = "id"
             static let roverName = "name"
@@ -75,7 +75,7 @@ struct Rover: JSONDecodable {
         self.maxDate = roverMaxDateValue
         self.totalPhotos = roverTotalPhotos
         // Make Camera types
-        self.cameras = roverCameras.flatMap { RoverCamera(json: $0) }
+        self.cameras = roverCameras.flatMap { RoverCamera(json: $0, rover: nil) }
         
     }
     

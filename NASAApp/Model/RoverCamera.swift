@@ -15,7 +15,7 @@ struct RoverCamera {
 }
 
 extension RoverCamera: JSONDecodable {
-    init?(json: [String: Any]) {
+    init?(json: [String: Any], rover: Rover?) {
         struct Key {
             static let cameraName = "name"
             static let cameraFullName = "full_name"
