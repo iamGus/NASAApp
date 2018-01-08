@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 struct RoverPhotoCellViewModel {
-    let image: UIImage
+    let image: UIImage?
 }
 
 extension RoverPhotoCellViewModel {
     init(roverPhoto: RoverPhoto) {
         // If rover photo state marked as downloaded then use rover image, otherwise use placeholder
         
-        self.image = roverPhoto.photoState == .downloaded ? roverPhoto.photo! : #imageLiteral(resourceName: "black_photo_btn")
+        self.image = roverPhoto.photoState == .downloaded ? roverPhoto.photo! : nil
         
     }
 }

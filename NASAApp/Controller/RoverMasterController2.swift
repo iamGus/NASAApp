@@ -24,9 +24,9 @@ class RoverMasterController2: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(RoverPhotoCell.self, forCellWithReuseIdentifier: RoverPhotoCell.reuseIdentifier)
+        //collectionView.register(RoverPhotoCell.self, forCellWithReuseIdentifier: RoverPhotoCell.reuseIdentifier)
         //let nib = UINib(nibName: "RoverPhotoCell", bundle: nil)
-        //collectionView.register(nib, forCellWithReuseIdentifier: RoverPhotoCell.reuseIdentifier)
+        collectionView.register(RoverPhotoCell.self, forCellWithReuseIdentifier: RoverPhotoCell.reuseIdentifier)
         collectionView.dataSource = dataSource
         
         

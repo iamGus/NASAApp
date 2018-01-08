@@ -11,7 +11,15 @@ import UIKit
 final class RoverPhotoCell: UICollectionViewCell {
     static let reuseIdentifier = String(describing: RoverPhotoCell.self)
     
+    
     @IBOutlet weak var photoView: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialisation code
+    }
+    
+    
     
     func configure(with viewModel: RoverPhotoCellViewModel) {
         photoView.image = viewModel.image
