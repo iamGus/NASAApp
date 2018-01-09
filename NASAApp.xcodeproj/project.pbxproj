@@ -17,6 +17,10 @@
 		18A45A982004AFE700ACE8B1 /* TextOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45A972004AFE700ACE8B1 /* TextOverlay.swift */; };
 		18A45A9C2004C4FD00ACE8B1 /* PopupRoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45A9B2004C4FD00ACE8B1 /* PopupRoverController.swift */; };
 		18A45A9E2004E60200ACE8B1 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45A9D2004E60200ACE8B1 /* ShowAlert.swift */; };
+		18A45AA0200502CB00ACE8B1 /* EarthImagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45A9F200502CB00ACE8B1 /* EarthImagesController.swift */; };
+		18A45AA2200509EE00ACE8B1 /* LocationSearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45AA1200509EE00ACE8B1 /* LocationSearchClient.swift */; };
+		18A45AA420050E0700ACE8B1 /* LocationSearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45AA320050E0700ACE8B1 /* LocationSearchDataSource.swift */; };
+		18A45AA62005113B00ACE8B1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45AA52005113B00ACE8B1 /* Utilities.swift */; };
 		18E65B492003AB0000E59C96 /* RoverDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E65B482003AB0000E59C96 /* RoverDetailController.swift */; };
 		18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595881FE0196C00798AD6 /* AppDelegate.swift */; };
 		18F5958B1FE0196C00798AD6 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5958A1FE0196C00798AD6 /* LandingController.swift */; };
@@ -55,6 +59,10 @@
 		18A45A972004AFE700ACE8B1 /* TextOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOverlay.swift; sourceTree = "<group>"; };
 		18A45A9B2004C4FD00ACE8B1 /* PopupRoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupRoverController.swift; sourceTree = "<group>"; };
 		18A45A9D2004E60200ACE8B1 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
+		18A45A9F200502CB00ACE8B1 /* EarthImagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImagesController.swift; sourceTree = "<group>"; };
+		18A45AA1200509EE00ACE8B1 /* LocationSearchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchClient.swift; sourceTree = "<group>"; };
+		18A45AA320050E0700ACE8B1 /* LocationSearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchDataSource.swift; sourceTree = "<group>"; };
+		18A45AA52005113B00ACE8B1 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		18E65B482003AB0000E59C96 /* RoverDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDetailController.swift; sourceTree = "<group>"; };
 		18F595851FE0196C00798AD6 /* NASAApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F595881FE0196C00798AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +117,7 @@
 			children = (
 				18A45A972004AFE700ACE8B1 /* TextOverlay.swift */,
 				18A45A9D2004E60200ACE8B1 /* ShowAlert.swift */,
+				18A45AA52005113B00ACE8B1 /* Utilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -169,6 +178,7 @@
 				18010BC41FE1611900DA8B20 /* NasaClient.swift */,
 				18FB77711FE7C8E500BABD99 /* PhotoDownloader.swift */,
 				18FB77731FE7CC5200BABD99 /* PendingOperations.swift */,
+				18A45AA1200509EE00ACE8B1 /* LocationSearchClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -180,6 +190,7 @@
 				183265011FFD1A770089FB6B /* RoverMasterController.swift */,
 				18E65B482003AB0000E59C96 /* RoverDetailController.swift */,
 				18A45A9B2004C4FD00ACE8B1 /* PopupRoverController.swift */,
+				18A45A9F200502CB00ACE8B1 /* EarthImagesController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				18FB776D1FE7B77600BABD99 /* RoverDataSource.swift */,
+				18A45AA320050E0700ACE8B1 /* LocationSearchDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -315,11 +327,13 @@
 				18F9AB211FE3DC740019BEA9 /* RoverPhoto.swift in Sources */,
 				18010BC31FE150D000DA8B20 /* JSONDecodable.swift in Sources */,
 				18010BBD1FE148F400DA8B20 /* RoverCamera.swift in Sources */,
+				18A45AA420050E0700ACE8B1 /* LocationSearchDataSource.swift in Sources */,
 				183265021FFD1A780089FB6B /* RoverMasterController.swift in Sources */,
 				18A45A9E2004E60200ACE8B1 /* ShowAlert.swift in Sources */,
 				18FB776E1FE7B77600BABD99 /* RoverDataSource.swift in Sources */,
 				18010BBF1FE14E4600DA8B20 /* APIClient.swift in Sources */,
 				18FB77771FE7CCF700BABD99 /* RoverPhotoCellViewModel.swift in Sources */,
+				18A45AA2200509EE00ACE8B1 /* LocationSearchClient.swift in Sources */,
 				18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */,
 				18010BBB1FE1481200DA8B20 /* Rover.swift in Sources */,
 				18E65B492003AB0000E59C96 /* RoverDetailController.swift in Sources */,
@@ -328,10 +342,12 @@
 				18A45A982004AFE700ACE8B1 /* TextOverlay.swift in Sources */,
 				18FB77701FE7BA8500BABD99 /* RoverPhotoCell.swift in Sources */,
 				18F5958B1FE0196C00798AD6 /* LandingController.swift in Sources */,
+				18A45AA0200502CB00ACE8B1 /* EarthImagesController.swift in Sources */,
 				18FB77741FE7CC5200BABD99 /* PendingOperations.swift in Sources */,
 				18F595AA1FE01AF000798AD6 /* Endpoint.swift in Sources */,
 				18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */,
 				18010BC11FE1500D00DA8B20 /* Result.swift in Sources */,
+				18A45AA62005113B00ACE8B1 /* Utilities.swift in Sources */,
 				18F595AC1FE01B4F00798AD6 /* NetworkConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
