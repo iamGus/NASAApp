@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoverMasterController2: UIViewController, UICollectionViewDelegate {
+class RoverMasterController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -25,48 +25,54 @@ class RoverMasterController2: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Setup collection view
         collectionView.register(RoverPhotoCell.self, forCellWithReuseIdentifier: RoverPhotoCell.reuseIdentifier)
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         
-        // Get Genre data from tmdb and update datasource
+        // Get Rover types from Nasa Api
         client.getRovers() { [weak self] result in
             switch result {
             case .success(let rovers):
                 self?.rovers = rovers
                 self?.cameras = RoverCamera.addCamerasAndRemoveDups(rovers: rovers)
+                
+                //Now get all images for the rovers
                 self?.getAllRoversPhotos()
             case.failure(let error):
                 switch error {
-                case .requestFailed: print("request failed")
-                case .responseUnsuccessful: print("\(APIError.responseUnsuccessful.errorDescription)")
-                case .invalidData: print("\(APIError.invalidData.errorDescription)")
-                case .jsonConversionFailure: print("\(APIError.jsonConversionFailure.errorDescription)")
-                case .jsonParsingFailure: print("\(APIError.jsonParsingFailure.errorDescription)")
+                case .requestFailed: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.requestFailed.errorDescription)")
+                case .responseUnsuccessful: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.responseUnsuccessful.errorDescription)")
+                case .invalidData: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.invalidData.errorDescription)")
+                case .jsonConversionFailure: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.jsonConversionFailure.errorDescription)")
+                case .jsonParsingFailure: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.jsonParsingFailure.errorDescription)")
                 }
             }
         }
     }
-
+    
+    /// After rover types have been downlaoded this function gets all images for all rovers
     func getAllRoversPhotos() {
         guard let allRovers = rovers else {
-            // Add error that rovers could not be loaded
+            // As rover types have its own error checking so this should not happen but in place just in case
+            showAlert(title: "Alert", message: "Sorry could not get images data for the rovers")
             return
         }
         
         client.getPhotosAll(rovers: allRovers) { [weak self]  result in
             switch result {
             case .success(let photos):
+                // Add all photo data to datasource and update colection view
                 self?.dataSource.update(with: photos)
                 self?.collectionView!.reloadData()
             //self?.dataSource.update(collectionView: (self?.collectionView)!)
             case .failure(let error):
-                switch error{
-                case .requestFailed: print("request failed")
-                case .responseUnsuccessful: print("\(APIError.responseUnsuccessful.errorDescription)")
-                case .invalidData: print("\(APIError.invalidData.errorDescription)")
-                case .jsonConversionFailure: print("\(APIError.jsonConversionFailure.errorDescription)")
-                case .jsonParsingFailure: print("\(APIError.jsonParsingFailure.errorDescription)")
+                switch error {
+                case .requestFailed: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.requestFailed.errorDescription)")
+                case .responseUnsuccessful: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.responseUnsuccessful.errorDescription)")
+                case .invalidData: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.invalidData.errorDescription)")
+                case .jsonConversionFailure: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.jsonConversionFailure.errorDescription)")
+                case .jsonParsingFailure: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.jsonParsingFailure.errorDescription)")
                 }
             }
         }
@@ -87,7 +93,7 @@ class RoverMasterController2: UIViewController, UICollectionViewDelegate {
                 
                 detailController.roverPhoto = dataSource.roverImage(at: indexPath)
             } else {
-                // Error handling
+                print("Unable to collect all needed data for Detail view controller")
             }
         }
     }

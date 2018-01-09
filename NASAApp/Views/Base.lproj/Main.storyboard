@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="145" y="105"/>
         </scene>
-        <!--Rover Master Controller2-->
+        <!--Rover Master Controller-->
         <scene sceneID="flS-DU-7rZ">
             <objects>
-                <viewController id="Ofh-cn-PUq" customClass="RoverMasterController2" customModule="NASAApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ofh-cn-PUq" customClass="RoverMasterController" customModule="NASAApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eFh-F1-lxv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
