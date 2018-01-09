@@ -111,11 +111,11 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vek-fW-g1w">
-                                <rect key="frame" x="87.5" y="622" width="199" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <rect key="frame" x="53.5" y="612" width="267" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Add text to rover image"/>
                                 <connections>
-                                    <segue destination="6mR-1C-qLh" kind="presentation" identifier="roverPopup" id="F0P-G5-FBw"/>
+                                    <segue destination="6mR-1C-qLh" kind="presentation" identifier="roverPopup" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="F0P-G5-FBw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -214,6 +214,11 @@
                                     <constraint firstItem="YoV-yg-4Q4" firstAttribute="top" secondItem="She-9f-jnD" secondAttribute="bottom" constant="15" id="sUz-DQ-Dmp"/>
                                     <constraint firstItem="She-9f-jnD" firstAttribute="centerX" secondItem="04x-7U-rTD" secondAttribute="centerX" id="svW-n9-aVR"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70103809931506844" colorSpace="calibratedRGB"/>
