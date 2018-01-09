@@ -13,27 +13,42 @@ import UIKit
 class RoverDetailController: UIViewController {
     
     @IBOutlet weak var roverPhotoView: UIImageView!
-    
+    @IBOutlet weak var addTextLabel: UIButton!
     
     var roverPhoto: RoverPhoto?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // If roverPhoto type contains needed data
         if let fullSizeImage = roverPhoto, let url = URL(string: fullSizeImage.photoUrl) {
             roverPhotoView.image = fullSizeImage.photo
-        
+            
+            // get full res image async and display image
             DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url)
-                DispatchQueue.main.async {
-                    self.roverPhotoView.image = UIImage(data: data!) //NOTE: Checking image data there or bringing up error
+                do {
+                    let data = try Data(contentsOf: url)
+                    DispatchQueue.main.async {
+                        self.roverPhotoView.image = UIImage(data: data)
+                    }
                     
+                // If cannot get image form internet then inform user
+                } catch let error {
+                    print("Error getting image from internet: \(error)")
+                    self.errorAlert(title: "Error: Could not load image", description: "Sorry unable to load full size image, please check your internet connection")
                 }
+                
+                
             }
+        } else {
+            // If Rover Photo type not containging correct data then inform user
+            print("Error: roverPhoto does not contain data needed to show full image")
+            errorAlert(title: "Error: Could not load image", description: "Sorry but image could not be loaded")
         }
     }
     
     
+    //Share image incluing email
     @IBAction func shareImage(_ sender: Any) {
         let activityViewController = UIActivityViewController(activityItems: [roverPhotoView.image], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
@@ -44,6 +59,7 @@ class RoverDetailController: UIViewController {
     
     // MARK: - Navigation
     
+    // Setting up delegate for PopupRoverController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "roverPopup") {
             if let popUpViewController = segue.destination as? PopupRoverController {
@@ -53,6 +69,7 @@ class RoverDetailController: UIViewController {
     }
 }
 
+// After text enetered in popup
 extension RoverDetailController: textEnteredDelegate {
     func addTextToImage(text: String) {
         
@@ -64,12 +81,28 @@ extension RoverDetailController: textEnteredDelegate {
             viewToAdd.font = UIFont.systemFont(ofSize: 40)
             viewToAdd.textColor = .yellow
             viewToAdd.textAlignment = .center
-            let width: CGFloat = 200
             let height: CGFloat = 30
             let indent: CGFloat = 40
             viewToAdd.bounds = CGRect(x: 0, y: parentSize.height - height - indent, width: parentSize.width, height: height)
         }
+        //Do not allow adding of more text
+        addTextLabel.isHidden = true
     }
+
+}
+
+//MARK: Helper
+
+extension RoverDetailController {
     
-    
+    /// Show alert with OK action sending back to previous view
+    func errorAlert(title: String, description: String) {
+        let alertController = UIAlertController(title: title, message: description, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
+            _ = self.navigationController?.popViewController(animated: true)
+        })
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

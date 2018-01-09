@@ -73,12 +73,7 @@ class RoverMasterController2: UIViewController, UICollectionViewDelegate {
     }
     
     
-    @IBAction func updateView(_ sender: Any) {
-        collectionView.reloadData()
-    }
-    
-
-    
+  
     // MARK: - Navigation
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
