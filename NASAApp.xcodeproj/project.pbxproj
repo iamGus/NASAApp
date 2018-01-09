@@ -15,6 +15,7 @@
 		18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC41FE1611900DA8B20 /* NasaClient.swift */; };
 		183265021FFD1A780089FB6B /* RoverMasterController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183265011FFD1A770089FB6B /* RoverMasterController2.swift */; };
 		18A45A982004AFE700ACE8B1 /* TextOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45A972004AFE700ACE8B1 /* TextOverlay.swift */; };
+		18A45A9C2004C4FD00ACE8B1 /* PopupRoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45A9B2004C4FD00ACE8B1 /* PopupRoverController.swift */; };
 		18E65B492003AB0000E59C96 /* RoverDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E65B482003AB0000E59C96 /* RoverDetailController.swift */; };
 		18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595881FE0196C00798AD6 /* AppDelegate.swift */; };
 		18F5958B1FE0196C00798AD6 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5958A1FE0196C00798AD6 /* LandingController.swift */; };
@@ -51,6 +52,7 @@
 		18010BC41FE1611900DA8B20 /* NasaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaClient.swift; sourceTree = "<group>"; };
 		183265011FFD1A770089FB6B /* RoverMasterController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverMasterController2.swift; sourceTree = "<group>"; };
 		18A45A972004AFE700ACE8B1 /* TextOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOverlay.swift; sourceTree = "<group>"; };
+		18A45A9B2004C4FD00ACE8B1 /* PopupRoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupRoverController.swift; sourceTree = "<group>"; };
 		18E65B482003AB0000E59C96 /* RoverDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDetailController.swift; sourceTree = "<group>"; };
 		18F595851FE0196C00798AD6 /* NASAApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F595881FE0196C00798AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				18F5958A1FE0196C00798AD6 /* LandingController.swift */,
 				183265011FFD1A770089FB6B /* RoverMasterController2.swift */,
 				18E65B482003AB0000E59C96 /* RoverDetailController.swift */,
+				18A45A9B2004C4FD00ACE8B1 /* PopupRoverController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				18010BBB1FE1481200DA8B20 /* Rover.swift in Sources */,
 				18E65B492003AB0000E59C96 /* RoverDetailController.swift in Sources */,
 				18FB77721FE7C8E500BABD99 /* PhotoDownloader.swift in Sources */,
+				18A45A9C2004C4FD00ACE8B1 /* PopupRoverController.swift in Sources */,
 				18A45A982004AFE700ACE8B1 /* TextOverlay.swift in Sources */,
 				18FB77701FE7BA8500BABD99 /* RoverPhotoCell.swift in Sources */,
 				18F5958B1FE0196C00798AD6 /* LandingController.swift in Sources */,

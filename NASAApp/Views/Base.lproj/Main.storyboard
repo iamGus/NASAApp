@@ -110,24 +110,33 @@
                                     <constraint firstAttribute="width" secondItem="H8I-EB-t5H" secondAttribute="height" multiplier="1:1" id="TEl-a8-xTN"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vek-fW-g1w">
-                                <rect key="frame" x="164" y="574" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vek-fW-g1w">
+                                <rect key="frame" x="87.5" y="622" width="199" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Add text to rover image"/>
                                 <connections>
-                                    <segue destination="6mR-1C-qLh" kind="presentation" id="F0P-G5-FBw"/>
+                                    <segue destination="6mR-1C-qLh" kind="presentation" identifier="roverPopup" id="F0P-G5-FBw"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vek-fW-g1w" firstAttribute="centerX" secondItem="Ps7-O5-1h8" secondAttribute="centerX" id="6qw-J9-hM9"/>
                             <constraint firstItem="H8I-EB-t5H" firstAttribute="centerX" secondItem="Ps7-O5-1h8" secondAttribute="centerX" id="LkU-x3-WO1"/>
                             <constraint firstItem="8xZ-Pe-PzR" firstAttribute="trailing" secondItem="H8I-EB-t5H" secondAttribute="trailing" id="cAS-ig-An6"/>
                             <constraint firstItem="H8I-EB-t5H" firstAttribute="centerY" secondItem="Ps7-O5-1h8" secondAttribute="centerY" id="loz-mm-WeH"/>
                             <constraint firstItem="H8I-EB-t5H" firstAttribute="leading" secondItem="8xZ-Pe-PzR" secondAttribute="leading" id="mlR-dq-ZOC"/>
+                            <constraint firstItem="8xZ-Pe-PzR" firstAttribute="bottom" secondItem="vek-fW-g1w" secondAttribute="bottom" constant="10" id="wiJ-89-koe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8xZ-Pe-PzR"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nCk-h0-rz7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="08d-jg-uxs">
+                            <connections>
+                                <action selector="shareImage:" destination="q3y-xj-I2R" id="BpW-pI-cEc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="roverPhotoView" destination="H8I-EB-t5H" id="zWo-MY-bzC"/>
                     </connections>
@@ -136,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="2308" y="105"/>
         </scene>
-        <!--View Controller-->
+        <!--Popup Rover Controller-->
         <scene sceneID="vIf-IV-opJ">
             <objects>
-                <viewController id="6mR-1C-qLh" sceneMemberID="viewController">
+                <viewController id="6mR-1C-qLh" customClass="PopupRoverController" customModule="NASAApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lW-Aq-Qcw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,6 +166,9 @@
                                         <rect key="frame" x="83" y="213" width="75" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Add Text"/>
+                                        <connections>
+                                            <action selector="addText:" destination="6mR-1C-qLh" eventType="touchUpInside" id="z80-km-0Ip"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the text to add to rover image" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="She-9f-jnD">
                                         <rect key="frame" x="30" y="20" width="180" height="78"/>
@@ -178,16 +190,25 @@
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRg-oe-hqe">
+                                        <rect key="frame" x="185" y="8" width="48" height="30"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelPopup:" destination="6mR-1C-qLh" eventType="touchUpInside" id="avM-qI-JiE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="She-9f-jnD" firstAttribute="top" secondItem="04x-7U-rTD" secondAttribute="top" constant="20" id="63O-4B-znD"/>
+                                    <constraint firstItem="GRg-oe-hqe" firstAttribute="top" secondItem="04x-7U-rTD" secondAttribute="top" constant="8" id="6a5-Fr-ebz"/>
                                     <constraint firstAttribute="width" constant="240" id="7AW-wp-Gdw"/>
                                     <constraint firstItem="xSJ-gk-YOb" firstAttribute="top" secondItem="YoV-yg-4Q4" secondAttribute="bottom" constant="21" id="FsT-va-s4L"/>
                                     <constraint firstAttribute="trailing" secondItem="YoV-yg-4Q4" secondAttribute="trailing" constant="20" id="I5O-t1-tWN"/>
                                     <constraint firstItem="GmF-Tf-dXf" firstAttribute="centerX" secondItem="04x-7U-rTD" secondAttribute="centerX" id="ZyZ-Jb-Jg7"/>
                                     <constraint firstAttribute="height" constant="260" id="aev-BE-jEM"/>
                                     <constraint firstAttribute="bottom" secondItem="GmF-Tf-dXf" secondAttribute="bottom" constant="12" id="bsA-Uo-SeA"/>
+                                    <constraint firstAttribute="trailing" secondItem="GRg-oe-hqe" secondAttribute="trailing" constant="7" id="e2Q-Sa-kAm"/>
                                     <constraint firstItem="YoV-yg-4Q4" firstAttribute="leading" secondItem="04x-7U-rTD" secondAttribute="leading" constant="20" id="ov7-dp-GFr"/>
                                     <constraint firstItem="xSJ-gk-YOb" firstAttribute="centerX" secondItem="YoV-yg-4Q4" secondAttribute="centerX" id="r9V-xx-Ek3"/>
                                     <constraint firstItem="YoV-yg-4Q4" firstAttribute="top" secondItem="She-9f-jnD" secondAttribute="bottom" constant="15" id="sUz-DQ-Dmp"/>
@@ -202,6 +223,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9le-A9-a8R"/>
                     </view>
+                    <connections>
+                        <outlet property="errorText" destination="xSJ-gk-YOb" id="gAh-wz-tgu"/>
+                        <outlet property="textField" destination="YoV-yg-4Q4" id="l5D-II-XLi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ns-ba-vU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
