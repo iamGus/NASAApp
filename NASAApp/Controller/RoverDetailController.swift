@@ -50,7 +50,8 @@ class RoverDetailController: UIViewController {
     
     //Share image incluing email
     @IBAction func shareImage(_ sender: Any) {
-        let activityViewController = UIActivityViewController(activityItems: [roverPhotoView.image], applicationActivities: nil)
+        //image is fource unwrapped as error / checking already been done above in ViewDidLoad
+        let activityViewController = UIActivityViewController(activityItems: [roverPhotoView.image!], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         
         self.present(activityViewController, animated: true, completion: nil)

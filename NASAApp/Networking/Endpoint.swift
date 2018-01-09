@@ -34,7 +34,7 @@ extension Endpoint {
     }
 }
 
-enum MarsRoverEndpoint {
+enum NasaEndpoint {
     /// A type that provides possible sort options for returned movie discovery search
     enum SortRoverCameras: CustomStringConvertible {
         case all, fhaz, rhaz, mast, chemcam, mahli, mardi, navcam, pancam, minites
@@ -55,30 +55,13 @@ enum MarsRoverEndpoint {
         }
     }
     
-    /*
     
-    enum SortRovers: CustomStringConvertible {
-        case curiosity, opportunity, spirit
-        
-        var description: String {
-            switch self {
-            case .curiosity: return "curiosity"
-            case .opportunity: return "opportunity"
-            case .spirit: return "spirit"
-            }
-        }
-    }
- 
- */
-    
-    //case curiousity(camera: SortRoverCameras)
-    //case opportunity(camera: SortRoverCameras)
-    //case spirit(camera: SortRoverCameras)
     case roverTypes
     case imageSearchByRover(rover: String)
+    case earthImages(long: Double, lat: Double)
 }
 
-extension MarsRoverEndpoint: Endpoint {
+extension NasaEndpoint: Endpoint {
     var base: String {
         return NetworkConstants.baseEndpoint
     }
@@ -86,11 +69,9 @@ extension MarsRoverEndpoint: Endpoint {
     
     var path: String {
         switch self {
-        //case .curiousity: return "/mars-photos/api/v1/rovers/curiousity/photos"
-        //case .opportunity: return "/mars-photos/api/v1/rovers/opportunity/photos"
-        //case .spirit: return "/mars-photos/api/v1/rovers/spirit/photos"
         case .roverTypes: return "/mars-photos/api/v1/rovers"
         case .imageSearchByRover(let rover): return "/mars-photos/api/v1/rovers/\(rover)/photos"
+        case .earthImages: return "/planetary/earth/imagery"
         }
     }
     
@@ -111,6 +92,13 @@ extension MarsRoverEndpoint: Endpoint {
                     URLQueryItem(name: "sol", value: "1"),
                     URLQueryItem(name: "page", value: "1")
                 ]
+        case .earthImages(let long, let lat):
+            return [
+                URLQueryItem(name: "api_key", value: apiKey),
+                URLQueryItem(name: "lon", value: long.description),
+                URLQueryItem(name: "lat", value: lat.description),
+                URLQueryItem(name: "date", value: "2017-05-17")
+            ]
             }
         }
     

@@ -22,7 +22,7 @@ class NASAClient: APIClient {
     /// Retrieve all rovers from Nasa
     func getRovers(completion: @escaping (Result<[Rover], APIError>) -> Void) {
         
-        let endpoint = MarsRoverEndpoint.roverTypes
+        let endpoint = NasaEndpoint.roverTypes
         let request = endpoint.request
         
         fetch(with: request, parse: { json -> [Rover] in
@@ -42,7 +42,7 @@ class NASAClient: APIClient {
             dispatchGroup.enter()
             
             let roverNameNocaps = rover.name.lowercased()
-            let endpoint = MarsRoverEndpoint.imageSearchByRover(rover: roverNameNocaps)
+            let endpoint = NasaEndpoint.imageSearchByRover(rover: roverNameNocaps)
             let request = endpoint.request
             print(request)
                 self.fetch(with: request, parse: { json -> [RoverPhoto] in
