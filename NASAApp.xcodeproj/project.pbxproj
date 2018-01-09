@@ -14,6 +14,7 @@
 		18010BC31FE150D000DA8B20 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC21FE150D000DA8B20 /* JSONDecodable.swift */; };
 		18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC41FE1611900DA8B20 /* NasaClient.swift */; };
 		183265021FFD1A780089FB6B /* RoverMasterController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183265011FFD1A770089FB6B /* RoverMasterController2.swift */; };
+		18A45A982004AFE700ACE8B1 /* TextOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45A972004AFE700ACE8B1 /* TextOverlay.swift */; };
 		18E65B492003AB0000E59C96 /* RoverDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E65B482003AB0000E59C96 /* RoverDetailController.swift */; };
 		18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595881FE0196C00798AD6 /* AppDelegate.swift */; };
 		18F5958B1FE0196C00798AD6 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5958A1FE0196C00798AD6 /* LandingController.swift */; };
@@ -49,6 +50,7 @@
 		18010BC21FE150D000DA8B20 /* JSONDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
 		18010BC41FE1611900DA8B20 /* NasaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaClient.swift; sourceTree = "<group>"; };
 		183265011FFD1A770089FB6B /* RoverMasterController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverMasterController2.swift; sourceTree = "<group>"; };
+		18A45A972004AFE700ACE8B1 /* TextOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOverlay.swift; sourceTree = "<group>"; };
 		18E65B482003AB0000E59C96 /* RoverDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDetailController.swift; sourceTree = "<group>"; };
 		18F595851FE0196C00798AD6 /* NASAApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F595881FE0196C00798AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		18A45A962004AFAF00ACE8B1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				18A45A972004AFE700ACE8B1 /* TextOverlay.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		18F5957C1FE0196C00798AD6 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 		18F595871FE0196C00798AD6 /* NASAApp */ = {
 			isa = PBXGroup;
 			children = (
+				18A45A962004AFAF00ACE8B1 /* Helpers */,
 				18FB77681FE7B2F500BABD99 /* Controller */,
 				18010BB91FE1472700DA8B20 /* Model */,
 				18F595A81FE01AD800798AD6 /* Networking */,
@@ -306,6 +317,7 @@
 				18010BBB1FE1481200DA8B20 /* Rover.swift in Sources */,
 				18E65B492003AB0000E59C96 /* RoverDetailController.swift in Sources */,
 				18FB77721FE7C8E500BABD99 /* PhotoDownloader.swift in Sources */,
+				18A45A982004AFE700ACE8B1 /* TextOverlay.swift in Sources */,
 				18FB77701FE7BA8500BABD99 /* RoverPhotoCell.swift in Sources */,
 				18F5958B1FE0196C00798AD6 /* LandingController.swift in Sources */,
 				18FB77741FE7CC5200BABD99 /* PendingOperations.swift in Sources */,
@@ -468,6 +480,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W47864AP4M;
 				INFOPLIST_FILE = NASAApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = angusmuller.NASAApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,6 +496,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W47864AP4M;
 				INFOPLIST_FILE = NASAApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = angusmuller.NASAApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
