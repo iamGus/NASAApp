@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class EarthImagesController: UIViewController {
 
@@ -16,6 +17,7 @@ class EarthImagesController: UIViewController {
     
     var searchController: UISearchController!
     var searchClient = LocationSearchClient()
+    var earthImageClient = NASAClient()
     let dataSource = LocationSearchDataSource()
     
     override func viewDidLoad() {
@@ -65,6 +67,60 @@ extension EarthImagesController: UITableViewDelegate, UISearchResultsUpdating, U
             
             self.dataSource.update(with: mapItems)
             self.tableView.reloadData()
+            
+        }
+    }
+    
+    // Tabale cell clicked, update imageView
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Deativates searh controller so that tableview cells are clickable
+        if searchController.isActive == true {
+            searchController.isActive = false
+        }
+        
+        let place = dataSource.object(at: indexPath).placemark.coordinate
+        getAndUpdateImageData(with: place)
+        
+    }
+    
+}
+
+// MARK: earthImage call to API and display
+extension EarthImagesController {
+    func getAndUpdateImageData(with placemark: CLLocationCoordinate2D) {
+        earthImageClient.getEarthImage(coordinates: placemark) { [weak self] (result) in
+            switch result {
+            case .success(let earthImage):
+                print(earthImage[0].url)
+                if earthImage.count == 1 {
+                    self?.downloadImage(url: earthImage[0].url)
+                }
+            case .failure(let error):
+                switch error {
+                case .requestFailed: self?.showAlert(title: "Alert", message: "Could not get earth image data, more details: \(APIError.requestFailed.errorDescription)")
+                case .responseUnsuccessful: self?.showAlert(title: "Alert", message: "Could not get earth image data, more details: \(APIError.responseUnsuccessful.errorDescription)")
+                case .invalidData: self?.showAlert(title: "Alert", message: "Could not get earth image data, more details: \(APIError.invalidData.errorDescription)")
+                case .jsonConversionFailure: self?.showAlert(title: "Alert", message: "Could not get earth image data, more details: \(APIError.jsonConversionFailure.errorDescription)")
+                case .jsonParsingFailure: self?.showAlert(title: "Alert", message: "Could not get earth image data, more details: \(APIError.jsonParsingFailure.errorDescription)")
+                }
+            }
+        }
+    }
+    
+    func downloadImage(url: URL) {
+        DispatchQueue.global().async {
+            do {
+                let data = try Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    self.earthImageView.image = UIImage(data: data)
+                }
+                
+                // If cannot get image form internet then inform user
+            } catch let error {
+                print("Error getting image from internet: \(error)")
+                self.showAlert(title: "Error: Could not load image", message: "Sorry unable to load full size image, please check your internet connection")
+            }
+            
             
         }
     }

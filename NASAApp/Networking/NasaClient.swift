@@ -8,6 +8,7 @@
 
 
 import Foundation
+import MapKit
 
 class NASAClient: APIClient {
     let session: URLSession
@@ -67,6 +68,18 @@ class NASAClient: APIClient {
             completion(Result.success(allRoversPhotos))
         }
         //completion(Result.success(allRoversPhotos))
+    }
+    
+    func getEarthImage(coordinates: CLLocationCoordinate2D, completion: @escaping (Result<[EarthImage], APIError>) -> Void) {
+        
+        let endpoint = NasaEndpoint.earthImages(long: coordinates.longitude, lat: coordinates.latitude)
+        let request = endpoint.request
+        
+        fetch(with: request, parse: { json -> [EarthImage] in
+            guard let earthImage = json as? [String: Any] else { return [] }
+            guard let eartchImage2 = EarthImage(json: earthImage, rover: nil) else { return [] }
+            return [eartchImage2]
+        }, completion: completion)
     }
     
 }
