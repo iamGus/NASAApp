@@ -71,7 +71,6 @@ class ProgressView: UIView {
             self.alpha = 1.0
         }
         activityIndicator.startAnimating()
-        print("animating")
     }
     
     func stopAnimating() {

@@ -40,8 +40,15 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         
-        // Get Rover types from Nasa Api
+        // Start progress indicator animating
         progressIndicator.startAnimating()
+        
+        // Call nasa api to get rover types
+        getRoverTypes()
+    }
+    
+    /// Get Rover Types from Nasa Api
+    func getRoverTypes() {
         client.getRovers() { [weak self] result in
             switch result {
             case .success(let rovers):
