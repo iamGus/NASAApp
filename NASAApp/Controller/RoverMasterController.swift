@@ -21,16 +21,27 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
     var cameras: [RoverCamera]?
     let client = NASAClient()
     
+    var progressIndicator = ProgressView()
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        view.addSubview(progressIndicator)
+        view.bringSubview(toFront: progressIndicator)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Setup progress message
+        progressIndicator = ProgressView(frame: view.bounds)
+       
         // Setup collection view
         collectionView.register(RoverPhotoCell.self, forCellWithReuseIdentifier: RoverPhotoCell.reuseIdentifier)
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         
         // Get Rover types from Nasa Api
+        progressIndicator.startAnimating()
         client.getRovers() { [weak self] result in
             switch result {
             case .success(let rovers):
@@ -46,6 +57,11 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
                 case .invalidData: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.invalidData.errorDescription)")
                 case .jsonConversionFailure: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.jsonConversionFailure.errorDescription)")
                 case .jsonParsingFailure: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.jsonParsingFailure.errorDescription)")
+                
+                // If error once shown popup stop loading indicator
+                defer {
+                    self?.progressIndicator.stopAnimating()
+                    }
                 }
             }
         }
@@ -65,6 +81,7 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
                 // Add all photo data to datasource and update colection view
                 self?.dataSource.update(with: photos)
                 self?.collectionView!.reloadData()
+                self?.progressIndicator.stopAnimating()
             //self?.dataSource.update(collectionView: (self?.collectionView)!)
             case .failure(let error):
                 switch error {
@@ -73,6 +90,11 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
                 case .invalidData: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.invalidData.errorDescription)")
                 case .jsonConversionFailure: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.jsonConversionFailure.errorDescription)")
                 case .jsonParsingFailure: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.jsonParsingFailure.errorDescription)")
+                
+                // If error once shown popup stop loading indicator
+                defer {
+                    self?.progressIndicator.stopAnimating()
+                    }
                 }
             }
         }
