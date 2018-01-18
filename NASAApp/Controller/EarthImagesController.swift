@@ -13,8 +13,8 @@ import MapKit
 class EarthImagesController: UIViewController {
 
     @IBOutlet weak var searchViewContainer: UIView!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var earthImageView: UIImageView!
+    @IBOutlet weak var tableView: earthTableView!
+    @IBOutlet weak var earthImageView: EarthImageView!
     
     var searchController: UISearchController!
     var searchClient = LocationSearchClient()
@@ -28,6 +28,8 @@ class EarthImagesController: UIViewController {
         // Setup progress message
         progress = ProgressView(frame: earthImageView.bounds)
         earthImageView.addSubview(progress)
+        
+       
     }
     
     override func viewDidLoad() {
@@ -36,6 +38,10 @@ class EarthImagesController: UIViewController {
         // Setup tableview
         tableView.delegate = self
         tableView.dataSource = dataSource
+        
+        //
+        tableView.height = 0.5
+        earthImageView.height = 2.5
         
         // Setup search bar
         configureSearchController()
