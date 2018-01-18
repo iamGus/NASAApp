@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 
+
 class EarthImagesController: UIViewController {
 
     @IBOutlet weak var searchViewContainer: UIView!
@@ -19,6 +20,7 @@ class EarthImagesController: UIViewController {
     var searchClient = LocationSearchClient()
     var earthImageClient = NASAClient()
     let dataSource = LocationSearchDataSource()
+    //let progressHUD = ProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,12 @@ class EarthImagesController: UIViewController {
         
         // Setup search bar
         configureSearchController()
+        
+        // Setup progress message
+        
+       // progressHUD.translatesAutoresizingMaskIntoConstraints = false
+       // earthImageView.addSubview(progressHUD)
+        
     }
 
 }
@@ -93,7 +101,7 @@ extension EarthImagesController {
             case .success(let earthImage):
                 print(earthImage[0].url)
                 if earthImage.count == 1 {
-                    self?.downloadImage(url: earthImage[0].url)
+                    self?.downloadImage(url: earthImage[0].url) // as only one image will be returned get first elemnt in array (only element)
                 }
             case .failure(let error):
                 switch error {
@@ -108,20 +116,27 @@ extension EarthImagesController {
     }
     
     func downloadImage(url: URL) {
+        let progress = ProgressView(frame: earthImageView.bounds)
+        earthImageView.addSubview(progress)
+        
+        progress.startAnimating()
         DispatchQueue.global().async {
             do {
                 let data = try Data(contentsOf: url)
                 DispatchQueue.main.async {
                     self.earthImageView.image = UIImage(data: data)
+                    progress.stopAnimating()
                 }
                 
                 // If cannot get image form internet then inform user
             } catch let error {
+                progress.stopAnimating()
                 print("Error getting image from internet: \(error)")
                 self.showAlert(title: "Error: Could not load image", message: "Sorry unable to load full size image, please check your internet connection")
             }
             
             
         }
+        
     }
 }

@@ -23,6 +23,7 @@
 		18A45AA62005113B00ACE8B1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45AA52005113B00ACE8B1 /* Utilities.swift */; };
 		18A45AA82005191D00ACE8B1 /* EarthImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45AA72005191D00ACE8B1 /* EarthImage.swift */; };
 		18E65B492003AB0000E59C96 /* RoverDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E65B482003AB0000E59C96 /* RoverDetailController.swift */; };
+		18E912232010B13100C2BF3F /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E912222010B13100C2BF3F /* ProgressView.swift */; };
 		18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595881FE0196C00798AD6 /* AppDelegate.swift */; };
 		18F5958B1FE0196C00798AD6 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5958A1FE0196C00798AD6 /* LandingController.swift */; };
 		18F5958E1FE0196C00798AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F5958C1FE0196C00798AD6 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		18A45AA52005113B00ACE8B1 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		18A45AA72005191D00ACE8B1 /* EarthImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImage.swift; sourceTree = "<group>"; };
 		18E65B482003AB0000E59C96 /* RoverDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDetailController.swift; sourceTree = "<group>"; };
+		18E912222010B13100C2BF3F /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		18F595851FE0196C00798AD6 /* NASAApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F595881FE0196C00798AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F5958A1FE0196C00798AD6 /* LandingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				18A45A972004AFE700ACE8B1 /* TextOverlay.swift */,
 				18A45A9D2004E60200ACE8B1 /* ShowAlert.swift */,
 				18A45AA52005113B00ACE8B1 /* Utilities.swift */,
+				18E912222010B13100C2BF3F /* ProgressView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				18E65B492003AB0000E59C96 /* RoverDetailController.swift in Sources */,
 				18FB77721FE7C8E500BABD99 /* PhotoDownloader.swift in Sources */,
 				18A45A9C2004C4FD00ACE8B1 /* PopupRoverController.swift in Sources */,
+				18E912232010B13100C2BF3F /* ProgressView.swift in Sources */,
 				18A45A982004AFE700ACE8B1 /* TextOverlay.swift in Sources */,
 				18FB77701FE7BA8500BABD99 /* RoverPhotoCell.swift in Sources */,
 				18F5958B1FE0196C00798AD6 /* LandingController.swift in Sources */,

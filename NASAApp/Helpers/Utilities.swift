@@ -7,6 +7,7 @@
 //
 
 import MapKit
+import UIKit
 
 class Utilities {
     /// Makes nicely formatted address
@@ -33,4 +34,5 @@ class Utilities {
         )
         return addressLine
     }
+
 }
