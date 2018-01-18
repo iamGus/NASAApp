@@ -29,7 +29,8 @@ class ProgressView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        isHidden = true
+        //isHidden = true
+        self.alpha = 0.0
         setupOverlay()
         setupText()
         setupActivityIndicator()
@@ -66,13 +67,20 @@ class ProgressView: UIView {
     
     
     func startAnimating() {
-        isHidden = false
+        UIView.animate(withDuration: 0.5) {
+            self.alpha = 1.0
+        }
         activityIndicator.startAnimating()
     }
     
     func stopAnimating() {
-        isHidden = true
-        activityIndicator.stopAnimating()
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.alpha = 0.0
+        }) { (complete) in
+            self.activityIndicator.stopAnimating()
+        }
+        
     }
     
 }

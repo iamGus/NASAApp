@@ -27,7 +27,6 @@ class EarthImagesController: UIViewController {
         super.viewWillLayoutSubviews()
         // Setup progress message
         progress = ProgressView(frame: earthImageView.bounds)
-        print(earthImageView.bounds.debugDescription)
         earthImageView.addSubview(progress)
     }
     
@@ -40,8 +39,7 @@ class EarthImagesController: UIViewController {
         
         // Setup search bar
         configureSearchController()
-        
-        
+    
     }
 
 }
