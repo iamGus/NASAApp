@@ -51,18 +51,8 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
                 //Now get all images for the rovers
                 self?.getAllRoversPhotos()
             case.failure(let error):
-                switch error {
-                case .requestFailed: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.requestFailed.errorDescription)")
-                case .responseUnsuccessful: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.responseUnsuccessful.errorDescription)")
-                case .invalidData: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.invalidData.errorDescription)")
-                case .jsonConversionFailure: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.jsonConversionFailure.errorDescription)")
-                case .jsonParsingFailure: self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(APIError.jsonParsingFailure.errorDescription)")
-                
-                // If error once shown popup stop loading indicator
-                defer {
-                    self?.progressIndicator.stopAnimating()
-                    }
-                }
+                self?.progressIndicator.stopAnimating()
+                self?.showAlert(title: "Alert", message: "Could not get rover data, more details: \(error.errorDescription)")
             }
         }
     }
@@ -84,18 +74,8 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
                 self?.progressIndicator.stopAnimating()
             //self?.dataSource.update(collectionView: (self?.collectionView)!)
             case .failure(let error):
-                switch error {
-                case .requestFailed: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.requestFailed.errorDescription)")
-                case .responseUnsuccessful: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.responseUnsuccessful.errorDescription)")
-                case .invalidData: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.invalidData.errorDescription)")
-                case .jsonConversionFailure: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.jsonConversionFailure.errorDescription)")
-                case .jsonParsingFailure: self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(APIError.jsonParsingFailure.errorDescription)")
-                
-                // If error once shown popup stop loading indicator
-                defer {
-                    self?.progressIndicator.stopAnimating()
-                    }
-                }
+                self?.progressIndicator.stopAnimating()
+                self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(error.errorDescription)")
             }
         }
     }
