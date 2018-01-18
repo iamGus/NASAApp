@@ -20,7 +20,16 @@ class EarthImagesController: UIViewController {
     var searchClient = LocationSearchClient()
     var earthImageClient = NASAClient()
     let dataSource = LocationSearchDataSource()
-    //let progressHUD = ProgressHUD()
+    
+    var progress = ProgressView()
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        // Setup progress message
+        progress = ProgressView(frame: earthImageView.bounds)
+        print(earthImageView.bounds.debugDescription)
+        earthImageView.addSubview(progress)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +41,6 @@ class EarthImagesController: UIViewController {
         // Setup search bar
         configureSearchController()
         
-        // Setup progress message
-        
-       // progressHUD.translatesAutoresizingMaskIntoConstraints = false
-       // earthImageView.addSubview(progressHUD)
         
     }
 
@@ -116,8 +121,6 @@ extension EarthImagesController {
     }
     
     func downloadImage(url: URL) {
-        let progress = ProgressView(frame: earthImageView.bounds)
-        earthImageView.addSubview(progress)
         
         progress.startAnimating()
         DispatchQueue.global().async {
@@ -125,12 +128,12 @@ extension EarthImagesController {
                 let data = try Data(contentsOf: url)
                 DispatchQueue.main.async {
                     self.earthImageView.image = UIImage(data: data)
-                    progress.stopAnimating()
+                    self.progress.stopAnimating()
                 }
                 
                 // If cannot get image form internet then inform user
             } catch let error {
-                progress.stopAnimating()
+                self.progress.stopAnimating()
                 print("Error getting image from internet: \(error)")
                 self.showAlert(title: "Error: Could not load image", message: "Sorry unable to load full size image, please check your internet connection")
             }
