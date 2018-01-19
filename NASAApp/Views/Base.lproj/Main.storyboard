@@ -211,11 +211,19 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vek-fW-g1w">
-                                <rect key="frame" x="53.5" y="612" width="267" height="45"/>
+                                <rect key="frame" x="53.5" y="602" width="267" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Add text to rover image"/>
                                 <connections>
                                     <segue destination="6mR-1C-qLh" kind="presentation" identifier="roverPopup" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="F0P-G5-FBw"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLC-VB-epS">
+                                <rect key="frame" x="47" y="602" width="280" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Share image with others"/>
+                                <connections>
+                                    <action selector="shareImage:" destination="q3y-xj-I2R" eventType="touchUpInside" id="OI4-NO-9iL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -223,10 +231,12 @@
                         <constraints>
                             <constraint firstItem="vek-fW-g1w" firstAttribute="centerX" secondItem="Ps7-O5-1h8" secondAttribute="centerX" id="6qw-J9-hM9"/>
                             <constraint firstItem="H8I-EB-t5H" firstAttribute="centerX" secondItem="Ps7-O5-1h8" secondAttribute="centerX" id="LkU-x3-WO1"/>
+                            <constraint firstItem="aLC-VB-epS" firstAttribute="centerX" secondItem="Ps7-O5-1h8" secondAttribute="centerX" id="QJk-Ra-bfb"/>
                             <constraint firstItem="8xZ-Pe-PzR" firstAttribute="trailing" secondItem="H8I-EB-t5H" secondAttribute="trailing" id="cAS-ig-An6"/>
                             <constraint firstItem="H8I-EB-t5H" firstAttribute="centerY" secondItem="Ps7-O5-1h8" secondAttribute="centerY" id="loz-mm-WeH"/>
                             <constraint firstItem="H8I-EB-t5H" firstAttribute="leading" secondItem="8xZ-Pe-PzR" secondAttribute="leading" id="mlR-dq-ZOC"/>
-                            <constraint firstItem="8xZ-Pe-PzR" firstAttribute="bottom" secondItem="vek-fW-g1w" secondAttribute="bottom" constant="10" id="wiJ-89-koe"/>
+                            <constraint firstItem="8xZ-Pe-PzR" firstAttribute="bottom" secondItem="aLC-VB-epS" secondAttribute="bottom" constant="20" id="ovm-bI-gNN"/>
+                            <constraint firstItem="8xZ-Pe-PzR" firstAttribute="bottom" secondItem="vek-fW-g1w" secondAttribute="bottom" constant="20" id="wiJ-89-koe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8xZ-Pe-PzR"/>
                     </view>
@@ -240,6 +250,7 @@
                     <connections>
                         <outlet property="addTextLabel" destination="vek-fW-g1w" id="U91-Ok-WUS"/>
                         <outlet property="roverPhotoView" destination="H8I-EB-t5H" id="zWo-MY-bzC"/>
+                        <outlet property="shareImage" destination="aLC-VB-epS" id="1AU-co-JNa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0s-PC-Ox5" userLabel="First Responder" sceneMemberID="firstResponder"/>

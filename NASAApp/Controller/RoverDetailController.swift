@@ -14,6 +14,8 @@ class RoverDetailController: UIViewController {
     
     @IBOutlet weak var roverPhotoView: UIImageView!
     @IBOutlet weak var addTextLabel: UIButton!
+    @IBOutlet weak var shareImage: UIButton!
+    
     
     var roverPhoto: RoverPhoto?
     
@@ -22,10 +24,8 @@ class RoverDetailController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         // Setup progress message
-        //progressIndicator = ProgressView(frame: roverPhotoView.bounds)
         view.addSubview(progressIndicator)
         view.bringSubview(toFront: progressIndicator)
-        
     }
 
     override func viewDidLoad() {
@@ -105,6 +105,7 @@ extension RoverDetailController: textEnteredDelegate {
         }
         //Do not allow adding of more text
         addTextLabel.isHidden = true
+        shareImage.isHidden = false
     }
 
 }
