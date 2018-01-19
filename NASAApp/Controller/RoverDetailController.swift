@@ -16,6 +16,17 @@ class RoverDetailController: UIViewController {
     @IBOutlet weak var addTextLabel: UIButton!
     
     var roverPhoto: RoverPhoto?
+    
+    var progressIndicator = ProgressView()
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        // Setup progress message
+        //progressIndicator = ProgressView(frame: roverPhotoView.bounds)
+        view.addSubview(progressIndicator)
+        view.bringSubview(toFront: progressIndicator)
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +35,22 @@ class RoverDetailController: UIViewController {
         if let fullSizeImage = roverPhoto, let url = URL(string: fullSizeImage.photoUrl) {
             roverPhotoView.image = fullSizeImage.photo
             
+            //Start Progress indicator
+            progressIndicator = ProgressView(frame: view.bounds)
+            progressIndicator.startAnimating()
+            
             // get full res image async and display image
             DispatchQueue.global().async {
                 do {
                     let data = try Data(contentsOf: url)
                     DispatchQueue.main.async {
                         self.roverPhotoView.image = UIImage(data: data)
+                        self.progressIndicator.stopAnimating()
                     }
                     
                 // If cannot get image form internet then inform user
                 } catch let error {
+                    self.progressIndicator.stopAnimating()
                     print("Error getting image from internet: \(error)")
                     self.errorAlert(title: "Error: Could not load image", description: "Sorry unable to load full size image, please check your internet connection")
                 }
