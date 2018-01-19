@@ -24,7 +24,7 @@
 		18A45AA82005191D00ACE8B1 /* EarthImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45AA72005191D00ACE8B1 /* EarthImage.swift */; };
 		18E65B492003AB0000E59C96 /* RoverDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E65B482003AB0000E59C96 /* RoverDetailController.swift */; };
 		18E912232010B13100C2BF3F /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E912222010B13100C2BF3F /* ProgressView.swift */; };
-		18E912252010FBB100C2BF3F /* earthTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E912242010FBB100C2BF3F /* earthTableView.swift */; };
+		18E912252010FBB100C2BF3F /* EarthTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E912242010FBB100C2BF3F /* EarthTableView.swift */; };
 		18E912272010FCF800C2BF3F /* EarthImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E912262010FCF800C2BF3F /* EarthImageView.swift */; };
 		18F595891FE0196C00798AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595881FE0196C00798AD6 /* AppDelegate.swift */; };
 		18F5958B1FE0196C00798AD6 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5958A1FE0196C00798AD6 /* LandingController.swift */; };
@@ -70,7 +70,7 @@
 		18A45AA72005191D00ACE8B1 /* EarthImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImage.swift; sourceTree = "<group>"; };
 		18E65B482003AB0000E59C96 /* RoverDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDetailController.swift; sourceTree = "<group>"; };
 		18E912222010B13100C2BF3F /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		18E912242010FBB100C2BF3F /* earthTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = earthTableView.swift; sourceTree = "<group>"; };
+		18E912242010FBB100C2BF3F /* EarthTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthTableView.swift; sourceTree = "<group>"; };
 		18E912262010FCF800C2BF3F /* EarthImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImageView.swift; sourceTree = "<group>"; };
 		18F595851FE0196C00798AD6 /* NASAApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F595881FE0196C00798AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 			children = (
 				18F5958C1FE0196C00798AD6 /* Main.storyboard */,
 				18FB776F1FE7BA8500BABD99 /* RoverPhotoCell.swift */,
-				18E912242010FBB100C2BF3F /* earthTableView.swift */,
+				18E912242010FBB100C2BF3F /* EarthTableView.swift */,
 				18E912262010FCF800C2BF3F /* EarthImageView.swift */,
 			);
 			path = Views;
@@ -343,7 +343,7 @@
 				183265021FFD1A780089FB6B /* RoverMasterController.swift in Sources */,
 				18E912272010FCF800C2BF3F /* EarthImageView.swift in Sources */,
 				18A45A9E2004E60200ACE8B1 /* ShowAlert.swift in Sources */,
-				18E912252010FBB100C2BF3F /* earthTableView.swift in Sources */,
+				18E912252010FBB100C2BF3F /* EarthTableView.swift in Sources */,
 				18FB776E1FE7B77600BABD99 /* RoverDataSource.swift in Sources */,
 				18010BBF1FE14E4600DA8B20 /* APIClient.swift in Sources */,
 				18FB77771FE7CCF700BABD99 /* RoverPhotoCellViewModel.swift in Sources */,

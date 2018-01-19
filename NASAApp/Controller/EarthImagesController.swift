@@ -13,7 +13,7 @@ import MapKit
 class EarthImagesController: UIViewController {
 
     @IBOutlet weak var searchViewContainer: UIView!
-    @IBOutlet weak var tableView: earthTableView!
+    @IBOutlet weak var tableView: EarthTableView!
     @IBOutlet weak var earthImageView: EarthImageView!
     
     var searchController: UISearchController!
