@@ -8,7 +8,7 @@
 
 import UIKit
 
-class earthTableView: UITableView {
+class EarthTableView: UITableView {
     
     var height = 1.0
 

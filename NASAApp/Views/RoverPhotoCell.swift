@@ -17,7 +17,7 @@ final class RoverPhotoCell: UICollectionViewCell {
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
         super.init(frame: frame)
         imageView.contentMode = UIViewContentMode.scaleAspectFit
-        imageView.backgroundColor = UIColor.blue
+        imageView.backgroundColor = UIColor.black
         contentView.addSubview(imageView)
     }
     

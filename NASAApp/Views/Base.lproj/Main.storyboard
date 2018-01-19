@@ -28,19 +28,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_background_port_x2" translatesAutoresizingMaskIntoConstraints="NO" id="qwK-fV-5mb">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QN1-kc-oqH">
-                                <rect key="frame" x="289.5" y="497" width="189" height="30"/>
-                                <state key="normal" title="Mars Rover Postcard Maker"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QN1-kc-oqH">
+                                <rect key="frame" x="184.5" y="480" width="400" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="Qgz-Rm-J4r"/>
+                                    <constraint firstAttribute="height" constant="64" id="byS-es-nv6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Mars Rover Postcard Maker" image="46"/>
                                 <connections>
                                     <segue destination="WTE-4c-gbt" kind="presentation" id="6PP-4E-Zd9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ln0-pk-BOI">
-                                <rect key="frame" x="142" y="417" width="91" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Earth Images"/>
-                                <connections>
-                                    <segue destination="la4-Lw-JbO" kind="presentation" id="LNF-TR-yK9"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planet-transparent" translatesAutoresizingMaskIntoConstraints="NO" id="xpc-cp-9l6">
@@ -55,12 +53,27 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ln0-pk-BOI">
+                                <rect key="frame" x="234.5" y="614" width="300" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="6LI-ev-HdT"/>
+                                    <constraint firstAttribute="height" constant="64" id="wlg-Bm-LBd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Earth Images" image="30"/>
+                                <connections>
+                                    <segue destination="la4-Lw-JbO" kind="presentation" id="LNF-TR-yK9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ln0-pk-BOI" firstAttribute="top" secondItem="QN1-kc-oqH" secondAttribute="bottom" constant="70" id="06u-2p-dZf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xpc-cp-9l6" secondAttribute="trailing" constant="67" id="6W2-tq-9MJ"/>
                             <constraint firstItem="QN1-kc-oqH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7Fx-s9-0CD"/>
                             <constraint firstItem="9sI-8i-dk1" firstAttribute="top" secondItem="xpc-cp-9l6" secondAttribute="bottom" constant="39" id="BQH-0w-DK2"/>
+                            <constraint firstItem="ln0-pk-BOI" firstAttribute="centerX" secondItem="QN1-kc-oqH" secondAttribute="centerX" id="C9n-9Y-NWc"/>
                             <constraint firstItem="xpc-cp-9l6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="53" id="Kdz-nY-NCS"/>
                             <constraint firstItem="xpc-cp-9l6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="Mvs-6E-ZOg"/>
                             <constraint firstItem="qwK-fV-5mb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NmK-Qo-Q0c"/>
@@ -186,15 +199,15 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-dB-vWl">
                                 <rect key="frame" x="0.0" y="114" width="768" height="910"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ob4-p6-Ptu">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="Ob4-p6-Ptu">
                                     <size key="itemSize" width="110" height="110"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoverPhotoCell" id="U5m-xA-sHV" customClass="RoverPhotoCell" customModule="NASAApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                        <rect key="frame" x="20" y="0.0" width="110" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
@@ -435,6 +448,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="30" width="64" height="64"/>
+        <image name="46" width="64" height="64"/>
         <image name="ipad_background_port_x2" width="1024" height="1366"/>
         <image name="planet-transparent" width="512" height="512"/>
     </resources>
