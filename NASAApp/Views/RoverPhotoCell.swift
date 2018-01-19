@@ -19,6 +19,12 @@ final class RoverPhotoCell: UICollectionViewCell {
         imageView.contentMode = UIViewContentMode.scaleAspectFit
         imageView.backgroundColor = UIColor.black
         contentView.addSubview(imageView)
+        
+        // Set cell corner radius
+        self.contentView.layer.cornerRadius = 8.0
+        self.contentView.layer.borderWidth = 1.0
+        self.contentView.layer.borderColor = UIColor.clear.cgColor
+        self.contentView.layer.masksToBounds = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,7 +34,9 @@ final class RoverPhotoCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialisation code
+        
     }
+
     
     func configure(with viewModel: RoverPhotoCellViewModel) {
         imageView.image = viewModel.image
