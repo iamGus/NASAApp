@@ -18,7 +18,7 @@ final class RoverPhotoCell: UICollectionViewCell {
         super.init(frame: frame)
         imageView.contentMode = UIViewContentMode.scaleAspectFit
         imageView.backgroundColor = UIColor.black
-        contentView.addSubview(imageView)
+        self.contentView.addSubview(imageView)
         
         // Set cell corner radius
         self.contentView.layer.cornerRadius = 8.0
