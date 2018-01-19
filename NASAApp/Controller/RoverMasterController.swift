@@ -106,6 +106,11 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
             }
         }
     }
+    
+    @IBAction func backHome(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
  
 
 }

@@ -47,6 +47,12 @@ class EarthImagesController: UIViewController {
         configureSearchController()
     
     }
+    
+    @IBAction func backHome(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
 
 }
 

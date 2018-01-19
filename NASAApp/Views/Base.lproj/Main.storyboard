@@ -63,7 +63,7 @@
                                     <constraint firstAttribute="height" constant="50" id="n0U-kC-2jW"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXq-em-oBS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXq-em-oBS">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Uri-cL-Rat"/>
@@ -126,7 +126,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GNp-Ff-uZi"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xWu-xW-Ty6"/>
+                    <navigationItem key="navigationItem" id="xWu-xW-Ty6">
+                        <barButtonItem key="leftBarButtonItem" title="Back Home" id="TzG-NJ-cFB">
+                            <connections>
+                                <action selector="backHome:" destination="ilo-3q-M1g" id="grA-g3-K9g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="earthImageView" destination="wXL-h7-ssC" id="Cz3-3A-XZy"/>
                         <outlet property="searchViewContainer" destination="bc2-Ig-EC2" id="LTF-zL-DQJ"/>
@@ -186,7 +192,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gnd-QO-NSx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XgJ-ca-gXs"/>
+                    <navigationItem key="navigationItem" id="XgJ-ca-gXs">
+                        <barButtonItem key="leftBarButtonItem" title="Back Home" id="ROh-7j-t99">
+                            <connections>
+                                <action selector="backHome:" destination="Ofh-cn-PUq" id="87X-LZ-sTI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="ggj-dB-vWl" id="mFt-d9-9YS"/>
                         <segue destination="q3y-xj-I2R" kind="show" identifier="RoverDetail" id="6LH-3y-xRe"/>
