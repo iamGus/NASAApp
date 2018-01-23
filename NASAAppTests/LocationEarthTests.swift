@@ -46,11 +46,12 @@ class LocationEarthTests: XCTestCase {
     
     // Test downlaod and return of UIImage form given url
     func testDownloadImage() {
+        let imageClient = SinglePhotoDownloader()
         var expect: XCTestExpectation? = expectation(description: "multiEx")
         
         let testImageUrl = URL(string: "https://earthengine.googleapis.com/api/thumb?thumbid=6edd4b7212ffe615b0a95612621eb640&token=8771dfa3155f21e0721fc954ccae4a9d")
         
-        EarthImage.downloadImage(url: testImageUrl!) { (results) in
+        imageClient.downloadImage(url: testImageUrl!) { (results) in
             switch results {
             case .success(let image):
                 XCTAssertNotNil(image, "Problem loading image")
