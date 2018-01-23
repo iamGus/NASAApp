@@ -66,7 +66,7 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
             return
         }
         
-        let downloader = PhotoDownloader(roverPhoto: roverPhoto)
+        let downloader = MultiplePhotoDownloader(roverPhoto: roverPhoto)
         
         // Run photo downloader on completion block
         downloader.completionBlock = {

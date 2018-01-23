@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PhotoDownloader: Operation {
+class MultiplePhotoDownloader: Operation {
     var roverPhoto: RoverPhoto
     
     init(roverPhoto: RoverPhoto) {
