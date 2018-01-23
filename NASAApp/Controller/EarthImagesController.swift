@@ -16,12 +16,13 @@ class EarthImagesController: UIViewController {
     @IBOutlet weak var tableView: EarthTableView!
     @IBOutlet weak var earthImageView: EarthImageView!
     
+    // Properties
     var searchController: UISearchController!
     var searchClient = LocationSearchClient()
     var earthImageClient = NASAClient()
     let dataSource = LocationSearchDataSource()
     let photoClient = SinglePhotoDownloader()
-    
+        // Progress Indicator
     var progress = ProgressView()
     
     override func viewWillLayoutSubviews() {
@@ -39,22 +40,17 @@ class EarthImagesController: UIViewController {
         // Setup tableview
         tableView.delegate = self
         tableView.dataSource = dataSource
-        
-        //
         tableView.height = 0.5
         earthImageView.height = 2.5
         
         // Setup search bar
         configureSearchController()
-    
     }
     
     @IBAction func backHome(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         
     }
-    
-
 }
 
 
@@ -62,8 +58,8 @@ class EarthImagesController: UIViewController {
 
 extension EarthImagesController: UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
+    // Not used but needed required to be in implermentation
     func updateSearchResults(for searchController: UISearchController) {
-        
     }
     
     /// Setup search bar
@@ -95,7 +91,7 @@ extension EarthImagesController: UITableViewDelegate, UISearchResultsUpdating, U
         }
     }
     
-    // Tabale cell clicked, update imageView
+    // Table cell clicked, update imageView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Deativates searh controller so that tableview cells are clickable
         if searchController.isActive == true {
@@ -103,7 +99,7 @@ extension EarthImagesController: UITableViewDelegate, UISearchResultsUpdating, U
         }
         
         let place = dataSource.object(at: indexPath).placemark.coordinate
-        getAndUpdateImageData(with: place)
+        getAndUpdateImageData(with: place) // Get and show image
         
     }
     
@@ -111,29 +107,24 @@ extension EarthImagesController: UITableViewDelegate, UISearchResultsUpdating, U
 
 // MARK: earthImage call to API and display
 extension EarthImagesController {
+    
+    // Get image aata (URL)
     func getAndUpdateImageData(with placemark: CLLocationCoordinate2D) {
         earthImageClient.getEarthImage(coordinates: placemark) { [weak self] (result) in
             switch result {
             case .success(let earthImage):
-                print(earthImage[0].url)
-                if earthImage.count == 1 {
+                if earthImage.count == 1 { // Only one image should ever be returned, but check just in case
                     self?.downloadImage(url: earthImage[0].url) // as only one image will be returned get first elemnt in array (only element)
                 }
             case .failure(let error):
-                switch error {
-                case .requestFailed: self?.showAlert(title: "Alert", message: "Could not get earth image data, more details: \(APIError.requestFailed.errorDescription)")
-                case .responseUnsuccessful: self?.showAlert(title: "Alert", message: "Could not get earth image data, more details: \(APIError.responseUnsuccessful.errorDescription)")
-                case .invalidData: self?.showAlert(title: "Alert", message: "Could not get earth image data, more details: \(APIError.invalidData.errorDescription)")
-                case .jsonConversionFailure: self?.showAlert(title: "Alert", message: "Could not get earth image data, more details: \(APIError.jsonConversionFailure.errorDescription)")
-                case .jsonParsingFailure: self?.showAlert(title: "Alert", message: "Could not get earth image data, more details: \(APIError.jsonParsingFailure.errorDescription)")
-                }
+                self?.showAlert(title: "Alert", message: "Could not get earth image data, more details: \(error.errorDescription)")
             }
         }
     }
     
+    // Download image from given url
     func downloadImage(url: URL) {
-        
-        progress.startAnimating()
+        progress.startAnimating() // Start progress indicator
         photoClient.downloadImage(url: url) { [weak self] (result) in
             switch result {
             case .success(let image):

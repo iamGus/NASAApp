@@ -17,7 +17,7 @@ class RoverDetailController: UIViewController {
     @IBOutlet weak var shareImage: UIButton!
     
     
-    var roverPhoto: RoverPhoto?
+    var roverPhoto: RoverPhoto? // Image type passed from MasterVC
     
     var progressIndicator = ProgressView()
     let photoClient = SinglePhotoDownloader()
@@ -40,7 +40,7 @@ class RoverDetailController: UIViewController {
             progressIndicator = ProgressView(frame: view.bounds)
             progressIndicator.startAnimating()
             
-            // get full res image async and display image
+            // get full res image async from internet and replace current image with this one
             photoClient.downloadImage(url: url, completion: { [weak self] (result) in
                 switch result {
                 case .success(let image):
@@ -60,9 +60,9 @@ class RoverDetailController: UIViewController {
     }
     
     
-    //Share image incluing email
+    // Share image incluing email
     @IBAction func shareImage(_ sender: Any) {
-        //image is fource unwrapped as error / checking already been done above in ViewDidLoad
+        // image is fource unwrapped below as error checking already been done above in ViewDidLoad
         let activityViewController = UIActivityViewController(activityItems: [roverPhotoView.image!], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         
@@ -82,8 +82,9 @@ class RoverDetailController: UIViewController {
     }
 }
 
-// After text enetered in popup
+// After text enetered in popup view
 extension RoverDetailController: textEnteredDelegate {
+    // Add text layer onto orgional image
     func addTextToImage(text: String) {
         
         let label = UILabel(frame: CGRect(x: 20, y: 20, width: 80, height: 30))
@@ -98,7 +99,7 @@ extension RoverDetailController: textEnteredDelegate {
             let indent: CGFloat = 40
             viewToAdd.bounds = CGRect(x: 0, y: parentSize.height - height - indent, width: parentSize.width, height: height)
         }
-        //Do not allow adding of more text
+        // Do not allow adding of more text
         addTextLabel.isHidden = true
         shareImage.isHidden = false
     }

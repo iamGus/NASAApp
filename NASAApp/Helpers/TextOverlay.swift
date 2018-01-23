@@ -6,6 +6,8 @@
 //  Copyright © 2018 Angus Muller. All rights reserved.
 //
 
+// Overlaying Text on image extensions
+
 import UIKit
 
 extension UIView {
@@ -15,6 +17,7 @@ extension UIView {
     }
 }
 
+// Helper: Gets a UIView (thats the view that has the text in it), adds this view ontop of image and returns new image
 extension UIImage {
     
     typealias EditSubviewClosure<T: UIView> = (_ parentSize: CGSize, _ viewToAdd: T)->()
@@ -38,6 +41,7 @@ extension UIImage {
     }
 }
 
+// This is what is actually called from RoverDetailController.
 extension UIImageView {
     
     enum ImageAddingMode {

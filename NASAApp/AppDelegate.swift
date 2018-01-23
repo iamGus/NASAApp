@@ -6,6 +6,10 @@
 //  Copyright © 2017 Angus Muller. All rights reserved.
 //
 
+
+// Note to reviewer: Performed app performance using Instrcuments, Used Allocations to check for strong referance cycles,
+// Used Time Profiler checking time spent executing methods, could not find any objects taking exsesive time up. All looked ok.
+
 import UIKit
 
 @UIApplicationMain

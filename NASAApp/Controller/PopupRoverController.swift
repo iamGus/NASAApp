@@ -6,6 +6,8 @@
 //  Copyright © 2018 Angus Muller. All rights reserved.
 //
 
+// Popup view to enter text that will be displayed ontop of image
+
 import UIKit
 
 protocol textEnteredDelegate: class {

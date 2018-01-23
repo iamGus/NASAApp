@@ -21,8 +21,10 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
     var cameras: [RoverCamera]?
     let client = NASAClient()
     
+    // Progress indicator
     var progressIndicator = ProgressView()
     
+    //  Add progress to subview
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         view.addSubview(progressIndicator)
@@ -64,14 +66,14 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
         }
     }
     
-    /// After rover types have been downlaoded this function gets all images for all rovers
+    /// After rover types have been downloaded this function gets all images for all rovers
     func getAllRoversPhotos() {
         guard let allRovers = rovers else {
             // As rover types have its own error checking so this should not happen but in place just in case
             showAlert(title: "Alert", message: "Sorry could not get images data for the rovers")
             return
         }
-        
+        // Download all rover images
         client.getPhotosAll(rovers: allRovers) { [weak self]  result in
             switch result {
             case .success(let photos):
@@ -79,7 +81,6 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
                 self?.dataSource.update(with: photos)
                 self?.collectionView!.reloadData()
                 self?.progressIndicator.stopAnimating()
-            //self?.dataSource.update(collectionView: (self?.collectionView)!)
             case .failure(let error):
                 self?.progressIndicator.stopAnimating()
                 self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(error.errorDescription)")
@@ -91,6 +92,7 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
   
     // MARK: - Navigation
     
+    // Show Rover Detail view for that image
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "RoverDetail", sender: collectionView.cellForItem(at: indexPath))
     }

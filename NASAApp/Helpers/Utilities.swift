@@ -10,7 +10,7 @@ import MapKit
 import UIKit
 
 class Utilities {
-    /// Makes nicely formatted address
+    /// Makes nicely formatted address for when showing locations that have been searched for in Earth Images
     static func parseAddress(from placemark: MKPlacemark) -> String {
         // put a space between "4" and "Melrose Place"
         let firstSpace = (placemark.subThoroughfare != nil && placemark.thoroughfare != nil) ? " " : ""

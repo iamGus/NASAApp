@@ -36,6 +36,7 @@ class ProgressView: UIView {
         setupActivityIndicator()
     }
     
+    // Sets up the base overlay that is the same size as of the frame it shall be overlaying onto
     private func setupOverlay() {
         overlay.backgroundColor = UIColor.lightGray
         overlay.translatesAutoresizingMaskIntoConstraints = false

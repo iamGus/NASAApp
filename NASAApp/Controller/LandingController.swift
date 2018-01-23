@@ -6,20 +6,16 @@
 //  Copyright © 2017 Angus Muller. All rights reserved.
 //
 
+// Not much to show in here, all layout done in User Interface
+
 import UIKit
 
 class LandingController: UIViewController {
     
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
     
     }
     
-    
-    
-
-
 }
 
