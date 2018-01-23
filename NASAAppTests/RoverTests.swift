@@ -12,7 +12,7 @@
 import XCTest
 @testable import NASAApp
 
-
+// Test json data
 extension Rover {
     static func validJson() -> [String: Any] {
         
@@ -56,8 +56,22 @@ class RoverTests: XCTestCase {
     }
     
     func testSucsessParse() {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd"
+        
         rover = Rover(json: jsonData, rover: nil)
         XCTAssertNotNil(rover)
+        
+        XCTAssertEqual(rover?.id, 5)
+        XCTAssertEqual(rover?.name, "Curiosity")
+        XCTAssertEqual(rover?.landingDate, formatter.date(from: "2012-08-06"))
+        XCTAssertEqual(rover?.launchDate, formatter.date(from: "2011-11-26"))
+        XCTAssertEqual(rover?.status, "active")
+        XCTAssertEqual(rover?.maxSol, 1942)
+        XCTAssertEqual(rover?.maxDate, formatter.date(from: "2018-01-22"))
+        XCTAssertEqual(rover?.totalPhotos, 330602)
+        XCTAssertEqual(rover?.cameras.count, 2)
     }
     
     func testFailParse() {
@@ -67,12 +81,6 @@ class RoverTests: XCTestCase {
         XCTAssertNil(rover)
     }
   
-    //MARK: Helper
-    
-    func switchKey<T, U>(_ myDict: inout [T:U], fromKey: T, toKey: T) {
-        if let entry = myDict.removeValue(forKey: fromKey) {
-            myDict[toKey] = entry
-        }
-    }
+ 
     
 }
