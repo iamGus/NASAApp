@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class EarthImage: JSONDecodable {
     let url: URL
@@ -23,6 +24,6 @@ class EarthImage: JSONDecodable {
         self.date = imageDate
     }
     
-    
+
     
 }

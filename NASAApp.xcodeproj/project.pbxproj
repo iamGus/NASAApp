@@ -14,6 +14,9 @@
 		18010BC31FE150D000DA8B20 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC21FE150D000DA8B20 /* JSONDecodable.swift */; };
 		18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC41FE1611900DA8B20 /* NasaClient.swift */; };
 		1805C8662016342C00F74DE0 /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805C8652016342C00F74DE0 /* HttpClientTests.swift */; };
+		181E288B2017677D00EBAA18 /* LocationEarthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E288A2017677D00EBAA18 /* LocationEarthTests.swift */; };
+		181E288D2017704600EBAA18 /* ImageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E288C2017704600EBAA18 /* ImageResult.swift */; };
+		181E288F2017780200EBAA18 /* SinglePhotoDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E288E2017780200EBAA18 /* SinglePhotoDownloader.swift */; };
 		183265021FFD1A780089FB6B /* RoverMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183265011FFD1A770089FB6B /* RoverMasterController.swift */; };
 		188F2B2220172AFE00458576 /* RoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188F2B2120172AFE00458576 /* RoverTests.swift */; };
 		18A45A982004AFE700ACE8B1 /* TextOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45A972004AFE700ACE8B1 /* TextOverlay.swift */; };
@@ -62,6 +65,9 @@
 		18010BC21FE150D000DA8B20 /* JSONDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
 		18010BC41FE1611900DA8B20 /* NasaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaClient.swift; sourceTree = "<group>"; };
 		1805C8652016342C00F74DE0 /* HttpClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientTests.swift; sourceTree = "<group>"; };
+		181E288A2017677D00EBAA18 /* LocationEarthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEarthTests.swift; sourceTree = "<group>"; };
+		181E288C2017704600EBAA18 /* ImageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResult.swift; sourceTree = "<group>"; };
+		181E288E2017780200EBAA18 /* SinglePhotoDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePhotoDownloader.swift; sourceTree = "<group>"; };
 		183265011FFD1A770089FB6B /* RoverMasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverMasterController.swift; sourceTree = "<group>"; };
 		188F2B2120172AFE00458576 /* RoverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverTests.swift; sourceTree = "<group>"; };
 		18A45A972004AFE700ACE8B1 /* TextOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOverlay.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 				18F5959F1FE0196C00798AD6 /* Info.plist */,
 				1805C8652016342C00F74DE0 /* HttpClientTests.swift */,
 				188F2B2120172AFE00458576 /* RoverTests.swift */,
+				181E288A2017677D00EBAA18 /* LocationEarthTests.swift */,
 			);
 			path = NASAAppTests;
 			sourceTree = "<group>";
@@ -189,12 +196,14 @@
 				18F595A91FE01AF000798AD6 /* Endpoint.swift */,
 				18010BC21FE150D000DA8B20 /* JSONDecodable.swift */,
 				18010BC01FE1500D00DA8B20 /* Result.swift */,
+				181E288C2017704600EBAA18 /* ImageResult.swift */,
 				18F595AB1FE01B4F00798AD6 /* NetworkConstants.swift */,
 				18010BBE1FE14E4600DA8B20 /* APIClient.swift */,
 				18010BC41FE1611900DA8B20 /* NasaClient.swift */,
 				18FB77711FE7C8E500BABD99 /* PhotoDownloader.swift */,
 				18FB77731FE7CC5200BABD99 /* PendingOperations.swift */,
 				18A45AA1200509EE00ACE8B1 /* LocationSearchClient.swift */,
+				181E288E2017780200EBAA18 /* SinglePhotoDownloader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -343,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F9AB211FE3DC740019BEA9 /* RoverPhoto.swift in Sources */,
+				181E288F2017780200EBAA18 /* SinglePhotoDownloader.swift in Sources */,
 				18010BC31FE150D000DA8B20 /* JSONDecodable.swift in Sources */,
 				18010BBD1FE148F400DA8B20 /* RoverCamera.swift in Sources */,
 				18A45AA420050E0700ACE8B1 /* LocationSearchDataSource.swift in Sources */,
@@ -352,6 +362,7 @@
 				18E912252010FBB100C2BF3F /* EarthTableView.swift in Sources */,
 				18FB776E1FE7B77600BABD99 /* RoverDataSource.swift in Sources */,
 				18010BBF1FE14E4600DA8B20 /* APIClient.swift in Sources */,
+				181E288D2017704600EBAA18 /* ImageResult.swift in Sources */,
 				18FB77771FE7CCF700BABD99 /* RoverPhotoCellViewModel.swift in Sources */,
 				18A45AA2200509EE00ACE8B1 /* LocationSearchClient.swift in Sources */,
 				18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */,
@@ -381,6 +392,7 @@
 				188F2B2220172AFE00458576 /* RoverTests.swift in Sources */,
 				1805C8662016342C00F74DE0 /* HttpClientTests.swift in Sources */,
 				18F5959E1FE0196C00798AD6 /* NASAAppTests.swift in Sources */,
+				181E288B2017677D00EBAA18 /* LocationEarthTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

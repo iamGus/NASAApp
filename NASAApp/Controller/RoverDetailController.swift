@@ -20,6 +20,7 @@ class RoverDetailController: UIViewController {
     var roverPhoto: RoverPhoto?
     
     var progressIndicator = ProgressView()
+    let photoClient = SinglePhotoDownloader()
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -40,25 +41,19 @@ class RoverDetailController: UIViewController {
             progressIndicator.startAnimating()
             
             // get full res image async and display image
-            DispatchQueue.global().async {
-                do {
-                    let data = try Data(contentsOf: url)
-                    DispatchQueue.main.async {
-                        self.roverPhotoView.image = UIImage(data: data)
-                        self.progressIndicator.stopAnimating()
-                    }
-                    
-                // If cannot get image form internet then inform user
-                } catch let error {
-                    self.progressIndicator.stopAnimating()
+            photoClient.downloadImage(url: url, completion: { [weak self] (result) in
+                switch result {
+                case .success(let image):
+                    self?.roverPhotoView.image = image
+                    self?.progressIndicator.stopAnimating()
+                case .failure(let error):
+                    self?.progressIndicator.stopAnimating()
                     print("Error getting image from internet: \(error)")
-                    self.errorAlert(title: "Error: Could not load image", description: "Sorry unable to load full size image, please check your internet connection")
+                    self?.errorAlert(title: "Error: Could not load image", description: "Sorry unable to load full size image, please check your internet connection")
                 }
-                
-                
-            }
+            })
         } else {
-            // If Rover Photo type not containging correct data then inform user
+            // If Rover Photo type not containing correct data then inform user
             print("Error: roverPhoto does not contain data needed to show full image")
             errorAlert(title: "Error: Could not load image", description: "Sorry but image could not be loaded")
         }

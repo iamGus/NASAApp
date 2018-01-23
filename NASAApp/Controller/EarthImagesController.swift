@@ -20,6 +20,7 @@ class EarthImagesController: UIViewController {
     var searchClient = LocationSearchClient()
     var earthImageClient = NASAClient()
     let dataSource = LocationSearchDataSource()
+    let photoClient = SinglePhotoDownloader()
     
     var progress = ProgressView()
     
@@ -133,23 +134,16 @@ extension EarthImagesController {
     func downloadImage(url: URL) {
         
         progress.startAnimating()
-        DispatchQueue.global().async {
-            do {
-                let data = try Data(contentsOf: url)
-                DispatchQueue.main.async {
-                    self.earthImageView.image = UIImage(data: data)
-                    self.progress.stopAnimating()
-                }
-                
-                // If cannot get image form internet then inform user
-            } catch let error {
-                self.progress.stopAnimating()
+        photoClient.downloadImage(url: url) { [weak self] (result) in
+            switch result {
+            case .success(let image):
+                self?.earthImageView.image = image
+                self?.progress.stopAnimating()
+            case .failure(let error):
+                self?.progress.stopAnimating()
                 print("Error getting image from internet: \(error)")
-                self.showAlert(title: "Error: Could not load image", message: "Sorry unable to load full size image, please check your internet connection")
+                self?.showAlert(title: "Error: Could not load image", message: "Sorry unable to load full size image, please check your internet connection")
             }
-            
-            
         }
-        
     }
 }
