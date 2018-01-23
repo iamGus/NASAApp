@@ -13,7 +13,9 @@
 		18010BC11FE1500D00DA8B20 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC01FE1500D00DA8B20 /* Result.swift */; };
 		18010BC31FE150D000DA8B20 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC21FE150D000DA8B20 /* JSONDecodable.swift */; };
 		18010BC51FE1611900DA8B20 /* NasaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18010BC41FE1611900DA8B20 /* NasaClient.swift */; };
+		1805C8662016342C00F74DE0 /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805C8652016342C00F74DE0 /* HttpClientTests.swift */; };
 		183265021FFD1A780089FB6B /* RoverMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183265011FFD1A770089FB6B /* RoverMasterController.swift */; };
+		188F2B2220172AFE00458576 /* RoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188F2B2120172AFE00458576 /* RoverTests.swift */; };
 		18A45A982004AFE700ACE8B1 /* TextOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45A972004AFE700ACE8B1 /* TextOverlay.swift */; };
 		18A45A9C2004C4FD00ACE8B1 /* PopupRoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45A9B2004C4FD00ACE8B1 /* PopupRoverController.swift */; };
 		18A45A9E2004E60200ACE8B1 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45A9D2004E60200ACE8B1 /* ShowAlert.swift */; };
@@ -59,7 +61,9 @@
 		18010BC01FE1500D00DA8B20 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		18010BC21FE150D000DA8B20 /* JSONDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
 		18010BC41FE1611900DA8B20 /* NasaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaClient.swift; sourceTree = "<group>"; };
+		1805C8652016342C00F74DE0 /* HttpClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientTests.swift; sourceTree = "<group>"; };
 		183265011FFD1A770089FB6B /* RoverMasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverMasterController.swift; sourceTree = "<group>"; };
+		188F2B2120172AFE00458576 /* RoverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverTests.swift; sourceTree = "<group>"; };
 		18A45A972004AFE700ACE8B1 /* TextOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOverlay.swift; sourceTree = "<group>"; };
 		18A45A9B2004C4FD00ACE8B1 /* PopupRoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupRoverController.swift; sourceTree = "<group>"; };
 		18A45A9D2004E60200ACE8B1 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 			children = (
 				18F5959D1FE0196C00798AD6 /* NASAAppTests.swift */,
 				18F5959F1FE0196C00798AD6 /* Info.plist */,
+				1805C8652016342C00F74DE0 /* HttpClientTests.swift */,
+				188F2B2120172AFE00458576 /* RoverTests.swift */,
 			);
 			path = NASAAppTests;
 			sourceTree = "<group>";
@@ -372,6 +378,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188F2B2220172AFE00458576 /* RoverTests.swift in Sources */,
+				1805C8662016342C00F74DE0 /* HttpClientTests.swift in Sources */,
 				18F5959E1FE0196C00798AD6 /* NASAAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
