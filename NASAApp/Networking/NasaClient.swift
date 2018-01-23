@@ -11,7 +11,7 @@ import Foundation
 import MapKit
 
 class NASAClient: APIClient {
-    var session: URLSession
+    let session: URLSession
     
     init(configuration: URLSessionConfiguration) {
         self.session = URLSession(configuration: configuration)
@@ -21,11 +21,13 @@ class NASAClient: APIClient {
         self.init(configuration: .default)
     }
     
+    /*
     // For unit testing with test seesion
     convenience init(session: URLSession) {
         self.init(configuration: .default)
         self.session = session
     }
+ */
     
     /// Retrieve all rovers from Nasa
     func get(url: URL, completion: @escaping (Result<[Rover], APIError>) -> Void) {
