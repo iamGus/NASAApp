@@ -69,7 +69,7 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
     /// After rover types have been downloaded this function gets all images for all rovers
     func getAllRoversPhotos() {
         guard let allRovers = rovers else {
-            // As rover types have its own error checking so this should not happen but in place just in case
+            // As rover types have their own error checking this should not happen but in place just in case
             showAlert(title: "Alert", message: "Sorry could not get images data for the rovers")
             return
         }
@@ -83,7 +83,7 @@ class RoverMasterController: UIViewController, UICollectionViewDelegate {
                 self?.progressIndicator.stopAnimating()
             case .failure(let error):
                 self?.progressIndicator.stopAnimating()
-                self?.showAlert(title: "Alert", message: "Could not get mars images data, more details: \(error.errorDescription)")
+                self?.showAlert(title: "Alert", message: "Could not get Mars images data, more details: \(error.errorDescription)")
             }
         }
     }

@@ -7,7 +7,7 @@
 //
 
 
-// Note to reviewer: Performed app performance using Instrcuments, Used Allocations to check for strong referance cycles,
+// Note to reviewer: Performed app performance using Instruments, Used Allocations to check for strong reference cycles,
 // Used Time Profiler checking time spent executing methods, could not find any objects taking exsesive time up. All looked ok.
 
 import UIKit

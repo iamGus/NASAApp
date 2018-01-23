@@ -42,7 +42,7 @@ extension RoverCamera: JSONDecodable {
 
 extension RoverCamera {
     
-    /// Gets cameras from all rovers and returns cameras with no duplicates plus icludes the rover ID in each camera that the rover can use.
+    /// Gets cameras from all rovers and returns cameras with no duplicates, plus icludes the rover ID in each camera that the rover can use.
     static func addCamerasAndRemoveDups(rovers: [Rover]) -> [RoverCamera] {
         
         var combinedCameras = [RoverCamera]()
@@ -55,7 +55,7 @@ extension RoverCamera {
         }
         
         // Add rover ID to camera so we know we can use this camera with that rover
-        // Do feel this is a bit of a tree of doom! Try to improve later
+       
         for rover in rovers {
             for camera in rover.cameras {
                 for (index, eachCombinedCamera) in combinedCameras.enumerated() {

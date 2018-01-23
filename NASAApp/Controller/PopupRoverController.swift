@@ -6,7 +6,7 @@
 //  Copyright © 2018 Angus Muller. All rights reserved.
 //
 
-// Popup view to enter text that will be displayed ontop of image
+// Popup view to enter text that will be displayed on top of image
 
 import UIKit
 

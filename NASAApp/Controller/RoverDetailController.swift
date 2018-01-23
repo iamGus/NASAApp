@@ -6,7 +6,7 @@
 //  Copyright © 2018 Angus Muller. All rights reserved.
 //
 
-// Currently images are not catched, in production app could use libary like Kingfisher to cache images to stop possible multiple downloads.
+// Currently images are not cached, in a production app could use libary like Kingfisher to cache images to stop possible multiple downloads.
 
 import UIKit
 
@@ -62,7 +62,7 @@ class RoverDetailController: UIViewController {
     
     // Share image incluing email
     @IBAction func shareImage(_ sender: Any) {
-        // image is fource unwrapped below as error checking already been done above in ViewDidLoad
+        // image is force unwrapped below as error checking already been done above in ViewDidLoad
         let activityViewController = UIActivityViewController(activityItems: [roverPhotoView.image!], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         

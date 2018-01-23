@@ -7,7 +7,7 @@
 //
 
 // My own try at writing a progress view that can be used throughout the app
-// Currently using some constants which I attend to change further on in development
+// Currently using some constants which I intend to change further on in development
 
 import UIKit
 
@@ -36,7 +36,7 @@ class ProgressView: UIView {
         setupActivityIndicator()
     }
     
-    // Sets up the base overlay that is the same size as of the frame it shall be overlaying onto
+    // Sets up the base overlay that is the same size as the frame it shall be overlaying onto
     private func setupOverlay() {
         overlay.backgroundColor = UIColor.lightGray
         overlay.translatesAutoresizingMaskIntoConstraints = false

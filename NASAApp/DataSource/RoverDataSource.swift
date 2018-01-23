@@ -12,7 +12,7 @@ class RoverDataSource: NSObject, UICollectionViewDataSource {
     
     private var data = [RoverPhoto]()
     
-    let pendingOperations = PendingOperations() // NOTE make private?
+    let pendingOperations = PendingOperations() 
     private var collectionView: UICollectionView
     
     

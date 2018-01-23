@@ -41,7 +41,7 @@ struct Rover: JSONDecodable {
             static let roverCameras = "cameras"
         }
         
-        //Checks that keys in JSON exists, contain values and convertible to needed type
+        //Checks that keys in JSON exists, contains values and is convertible to needed type
         guard let roverId = json[Key.roverId] as? Int,
             let roverName = json[Key.roverName] as? String,
             let roverLandingDate = json[Key.roverLandingDate] as? String,

@@ -58,7 +58,7 @@ class EarthImagesController: UIViewController {
 
 extension EarthImagesController: UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
-    // Not used but needed required to be in implermentation
+  
     func updateSearchResults(for searchController: UISearchController) {
     }
     
@@ -76,7 +76,7 @@ extension EarthImagesController: UITableViewDelegate, UISearchResultsUpdating, U
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchClient.search(withTerm: searchText) { (mapItems, error) in
             
-            // If there is no internet connection this error notice is triggered, note though the apple map kit takes too long to bring back this error so would need to inhance this so error somes back quicker in a production app.
+            // If there is no internet connection this error notice is triggered, note though the apple map kit takes too long to bring back this error so would need to enhance this so error comes back quicker in a production app.
             if let searchError = error  {
                 // Needs more testing before activating the below
                 //self.searchController.isActive = false
@@ -114,7 +114,7 @@ extension EarthImagesController {
             switch result {
             case .success(let earthImage):
                 if earthImage.count == 1 { // Only one image should ever be returned, but check just in case
-                    self?.downloadImage(url: earthImage[0].url) // as only one image will be returned get first elemnt in array (only element)
+                    self?.downloadImage(url: earthImage[0].url) // as only one image will be returned get first element in array (only element)
                 }
             case .failure(let error):
                 self?.showAlert(title: "Alert", message: "Could not get earth image data, more details: \(error.errorDescription)")

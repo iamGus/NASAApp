@@ -17,7 +17,7 @@ extension UIView {
     }
 }
 
-// Helper: Gets a UIView (thats the view that has the text in it), adds this view ontop of image and returns new image
+// Helper: Gets a UIView (thats the view that has the text in it), adds this view on top of image and returns new image
 extension UIImage {
     
     typealias EditSubviewClosure<T: UIView> = (_ parentSize: CGSize, _ viewToAdd: T)->()

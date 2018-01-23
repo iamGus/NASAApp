@@ -48,7 +48,7 @@ class LocationEarthTests: XCTestCase {
         let imageClient = SinglePhotoDownloader()
         var expect: XCTestExpectation? = expectation(description: "multiEx")
         
-        let testImageUrl = URL(string: "https://earthengine.googleapis.com/api/thumb?thumbid=6edd4b7212ffe615b0a95612621eb640&token=8771dfa3155f21e0721fc954ccae4a9d")
+        let testImageUrl = URL(string: "https://www.google.co.uk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png")
         
         imageClient.downloadImage(url: testImageUrl!) { (results) in
             switch results {

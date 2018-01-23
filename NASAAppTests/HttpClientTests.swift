@@ -6,7 +6,7 @@
 //  Copyright © 2018 Angus Muller. All rights reserved.
 //
 
-// Testing enpoints for Rover and Mars phtos can be reached and data is returned
+// Testing end points for Rover and Mars photos can be reached and data is returned
 
 import XCTest
 @testable import NASAApp
