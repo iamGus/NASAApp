@@ -23,7 +23,5 @@ extension RoverPhotoCellViewModel {
             self.image = nil
         }
         
-        //self.image = roverPhoto.photoState == .downloaded ? roverPhoto.photo! : nil
-        
     }
 }

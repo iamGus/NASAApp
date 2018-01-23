@@ -36,7 +36,6 @@
 		18F5958E1FE0196C00798AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F5958C1FE0196C00798AD6 /* Main.storyboard */; };
 		18F595901FE0196C00798AD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F5958F1FE0196C00798AD6 /* Assets.xcassets */; };
 		18F595931FE0196C00798AD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F595911FE0196C00798AD6 /* LaunchScreen.storyboard */; };
-		18F5959E1FE0196C00798AD6 /* NASAAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5959D1FE0196C00798AD6 /* NASAAppTests.swift */; };
 		18F595AA1FE01AF000798AD6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595A91FE01AF000798AD6 /* Endpoint.swift */; };
 		18F595AC1FE01B4F00798AD6 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F595AB1FE01B4F00798AD6 /* NetworkConstants.swift */; };
 		18F9AB211FE3DC740019BEA9 /* RoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9AB201FE3DC740019BEA9 /* RoverPhoto.swift */; };
@@ -90,7 +89,6 @@
 		18F595921FE0196C00798AD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18F595941FE0196C00798AD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18F595991FE0196C00798AD6 /* NASAAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		18F5959D1FE0196C00798AD6 /* NASAAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAppTests.swift; sourceTree = "<group>"; };
 		18F5959F1FE0196C00798AD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18F595A91FE01AF000798AD6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		18F595AB1FE01B4F00798AD6 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 		18F5959C1FE0196C00798AD6 /* NASAAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				18F5959D1FE0196C00798AD6 /* NASAAppTests.swift */,
 				18F5959F1FE0196C00798AD6 /* Info.plist */,
 				1805C8652016342C00F74DE0 /* HttpClientTests.swift */,
 				188F2B2120172AFE00458576 /* RoverTests.swift */,
@@ -391,7 +388,6 @@
 			files = (
 				188F2B2220172AFE00458576 /* RoverTests.swift in Sources */,
 				1805C8662016342C00F74DE0 /* HttpClientTests.swift in Sources */,
-				18F5959E1FE0196C00798AD6 /* NASAAppTests.swift in Sources */,
 				181E288B2017677D00EBAA18 /* LocationEarthTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

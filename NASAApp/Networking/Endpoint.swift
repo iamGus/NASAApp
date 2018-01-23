@@ -35,7 +35,7 @@ extension Endpoint {
 }
 
 enum NasaEndpoint {
-    /// A type that provides possible sort options for returned movie discovery search
+    /// A type that provides possible sort options for returned rover cameras
     enum SortRoverCameras: CustomStringConvertible {
         case all, fhaz, rhaz, mast, chemcam, mahli, mardi, navcam, pancam, minites
         

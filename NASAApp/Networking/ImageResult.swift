@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Results come through this enum allowing easy switch statement on success or failure.
+/// Results come through this enum allowing easy switch statement on success or failure. Used for single image downloads.
 enum ImageResult<T, U> {
     case success(T)
     case failure(U)

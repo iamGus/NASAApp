@@ -8,10 +8,11 @@
 
 import UIKit
 
+// Used when only need to download one image
 class SinglePhotoDownloader {
     
     func downloadImage(url: URL, completion: @escaping (ImageResult<UIImage, String>) -> Void) {
-        //progress.startAnimating()
+        
         DispatchQueue.global().async {
             do {
                 let data = try Data(contentsOf: url)
@@ -20,12 +21,10 @@ class SinglePhotoDownloader {
                         return completion(ImageResult.failure("Could not convert data to image type"))
                     }
                     completion(ImageResult.success(image))
-                    //self.progress.stopAnimating()
                 }
                 
                 // If cannot get image form internet then inform user
             } catch let error {
-                //self.progress.stopAnimating()
                 completion(ImageResult.failure(error.localizedDescription))
             }
         }

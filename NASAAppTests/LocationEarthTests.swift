@@ -11,7 +11,6 @@ import XCTest
 
 class LocationEarthTests: XCTestCase {
     
-    
     var locationClient = LocationSearchClient()
     
     override func setUp() {

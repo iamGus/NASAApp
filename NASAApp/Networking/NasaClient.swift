@@ -21,27 +21,6 @@ class NASAClient: APIClient {
         self.init(configuration: .default)
     }
     
-    /*
-    // For unit testing with test seesion
-    convenience init(session: URLSession) {
-        self.init(configuration: .default)
-        self.session = session
-    }
- */
-    
-    /// Retrieve all rovers from Nasa
-    func get(url: URL, completion: @escaping (Result<[Rover], APIError>) -> Void) {
-        
-        //let endpoint = NasaEndpoint.roverTypes
-        let request = URLRequest(url: url)
-        
-        fetch(with: request, parse: { json -> [Rover] in
-            guard let allRovers = json["rovers"] as? [[String: Any]] else { return [] }
-            return allRovers.flatMap { Rover(json: $0, rover: nil) }
-        }, completion: completion)
-    }
-    
-    
     /// Retrieve all rovers from Nasa
     func getRovers(completion: @escaping (Result<[Rover], APIError>) -> Void) {
         
@@ -60,6 +39,7 @@ class NASAClient: APIClient {
         var allRoversPhotos = [RoverPhoto]()
         let dispatchGroup = DispatchGroup()
         
+        // Get json data for each rover
         for rover in rovers {
             
             dispatchGroup.enter()
@@ -78,18 +58,15 @@ class NASAClient: APIClient {
                     allRoversPhotos += rovers // Add photos of that rover to allRoversPhotos
                     dispatchGroup.leave()
                 case .failure(let error):
-                    
-                    //print(errorAccured)
                     completion(Result.failure(error))
                     break
                 }
             }
     }
         dispatchGroup.notify(queue: .main) {
-            print("in dispatch group notify")
             completion(Result.success(allRoversPhotos))
         }
-        //completion(Result.success(allRoversPhotos))
+        
     }
     
     func getEarthImage(coordinates: CLLocationCoordinate2D, completion: @escaping (Result<[EarthImage], APIError>) -> Void) {

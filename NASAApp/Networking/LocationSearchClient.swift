@@ -8,11 +8,11 @@
 
 import MapKit
 
+// Get location results from users eneter string, return mapItems
 class LocationSearchClient {
     func search(withTerm term: String, completion: @escaping ([MKMapItem], Error?) -> Void) {
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = term
-        //request.region.center = coordinate
         let search = MKLocalSearch(request: request)
         search.start { response, error in
             guard let response = response else {

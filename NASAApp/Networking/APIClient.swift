@@ -17,7 +17,7 @@ enum APIError: Error {
     case responseUnsuccessful
     case jsonParsingFailure
     
-    //Readable description of error
+    // Readable description of error
     var errorDescription: String {
         switch self {
         case .requestFailed: return "Request Failed"
@@ -94,8 +94,6 @@ extension APIClient {
         
         task.resume()
     }
-    
-    
     
 }
 
